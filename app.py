@@ -17,4 +17,4 @@ def corona192():
     return render_template("corona19_20200226.html")
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port='80', debug=False)
+    app.run(host='0.0.0.0', port='5000', debug=False)
