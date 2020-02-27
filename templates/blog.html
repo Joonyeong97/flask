@@ -2,14 +2,11 @@
 <html lang="kr">
 <head>
 	<title>Data Cook</title>
-
-
 	<meta charset="UTF-8">
-	<meta name="description" content="issue">
+	<meta name="description" content="Nissa Photography studio html template">
 	<meta name="keywords" content="industry, html">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
+	
 	<!-- Favicon -->
 	<link href="img/favicon.ico" rel="shortcut icon"/>
 
@@ -66,6 +63,7 @@
 				<a href=""><i class="fa fa-instagram"></i></a>
 				<a href=""><i class="fa fa-facebook"></i></a>
 				<a href=""><i class="fa fa-twitter"></i></a>
+
 			</div>
 		</header>
 		<div class="site-content-warp">
@@ -77,50 +75,44 @@
 						<p>BigData analysis</p>
 					</a>
 					<div class="about-info">
-						<h2>Issue analysis</h2>
-						<p> 현재 이슈 데이터를 통하여 분석하여 드립니다.</p>
+						<h2> 코로나 바이러스 </h2>
+						<h2>감염자 예측<h2>
+						<p>model: fbprophet </p>
 					</div>
 					<ul class="contact-info">
 						<li>대한민국</li>
 						<li>제주특별자치도</li>
 						<li><a href="mailto:lyt970120@gmail.com">lyt970120@gmail.com</a></li>
 					</ul>
-
-					<a href="index" class="site-btn"> Site <img src="static/img/arrow-right.png" alt=""></a>
+					<a href="#" class="site-btn">see my portfolio <img src="static/img/arrow-right.png" alt=""></a>
 				</div>
 			</div>
 			<!-- Left Side section end -->
 			<!-- Page start -->
-			<div class="page-section">
-				<div class="hero-section">
-					<div class="hero-scroll">
-						<div class="hero-track">
-
-							<div class="hs-item set-bg" data-setbg="static/img/crona.jpg">
-								<div class="hs-info">
-									<h5>코로나19바이러스</h5>
-									<p>감염자수 예측</p>
-									<a href="blog"><img src="static/img/arrow-right.png" alt=""></a>
-								</div>
-							</div>
 
 
-							<div class="hs-item set-bg" data-setbg="static/img/hero/2.jpg">
-								<div class="hs-info">
-									<h5>Bold Architecture</h5>
-									<p>Cityscape Photography</p>
-									<a href="#"><img src="static/img/arrow-right.png" alt=""></a>
-								</div>
-							</div>
+			<div class="page-section blog-page">
+				<div class="blog-posts">
+
+				<div class="blog-post-item">
+					<div class="blog-thumb set-bg" data-setbg="static/img/blog/20200227.png" width="600" height="400">
+						<div class="post-date">
+							<h3>27</h3>
+							<p>02<br>2020</p>
+						</div>
+					</div>
 
 
-							<div class="hs-item set-bg" data-setbg="static/img/hero/1.jpg">
-								<div class="hs-info">
-									<h5>Ice Cold Love</h5>
-									<p>Nature Photoagraphy</p>
-									<a href="#"><img src="static/img/arrow-right.png" alt=""></a>
-								</div>
-							</div>
+				<div class="blog-post-item">
+					<div class="blog-thumb set-bg" data-setbg="static/img/blog/20200226.png" width="600" height="400">
+						<div class="post-date">
+							<h3>26</h3>
+							<p>02<br>2020</p>
+						</div>
+					</div>
+
+						</div>
+					</div>
 
 
 						</div>
@@ -129,11 +121,15 @@
 			</div>
 			<!-- Page end -->
 		</div>
+
+
 		<div class="copyright"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
   Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
 	</div>
 	<!-- Main section end -->
+	
+
 	
 	<!--====== Javascripts & Jquery ======-->
 	<script src="{{ url_for('static',filename='js/jquery-3.2.1.min.js') }}"></script>
@@ -143,7 +139,6 @@
 	<script src="{{ url_for('static',filename='js/circle-progress.min.js') }}"></script>
 	<script src="{{ url_for('static',filename='js/jquery.magnific-popup.min.js') }}"></script>
 	<script src="{{ url_for('static',filename='js/main.js') }}"></script>
-
 
 	</body>
 </html>
