@@ -1,8 +1,6 @@
 from flask import render_template
 from flask import Flask
 
-from OpenSSL import SSL
-
 app = Flask(__name__)
 
 
