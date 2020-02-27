@@ -148,8 +148,28 @@ $(window).on('load', function() {
 		hero_section();
 		site_scrollbar();
 	});
+    /*------------------
+		map
+	--------------------*/
+    $(document).ready(function(){
 
-	
+    document.getElementById("footer").innerHTML='<object type="templates" data="map1.html"></object>';
+
+    })
+	/*------------------
+		import
+	--------------------*/
+
+    function supportsImports() {
+      return 'import' in document.createElement('link');
+    }
+
+    if (supportsImports()) {
+      // 지원하므로 그대로 진행합니다.
+    } else {
+      // 파일을 로딩하기 위한 다른 라이브러리나 require 시스템들을 사용하세요.
+    }
+
 	/*------------------
 		Accordions
 	--------------------*/

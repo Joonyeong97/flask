@@ -49,5 +49,9 @@ def naver():
 def daum():
     return render_template("analysis/daum.html")
 
+@app.route('/map')
+def map():
+    return render_template("map1.html")
+
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=80)
