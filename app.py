@@ -54,4 +54,8 @@ def map():
     return render_template("map1.html")
 
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=80)
+    start = input('온라인은 y / 오프라인은 아무키나 : ')
+    if start == 'y':
+        app.run(host='0.0.0.0', port=80)
+    else:
+        app.run(host='127.0.0.1', port=80)
