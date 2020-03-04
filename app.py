@@ -12,9 +12,13 @@ def index():
 def about():
     return render_template("about.html")
 
-@app.route('/corona')
-def blog():
-    return render_template("corona.html")
+@app.route('/corona02')
+def corona02():
+    return render_template("analysis/corona/corona02.html")
+@app.route('/corona03')
+def corona03():
+    return render_template("analysis/corona/corona03.html")
+
 
 @app.route('/issue')
 def issue():
@@ -49,9 +53,9 @@ def naver():
 def daum():
     return render_template("analysis/daum.html")
 
-@app.route('/map')
-def map():
-    return render_template("map1.html")
+@app.route('/corona')
+def corona_home():
+    return render_template("corona_home.html")
 
 if __name__ == '__main__':
     start = input('온라인은 y / 오프라인은 아무키나 : ')
