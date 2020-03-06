@@ -1,12 +1,33 @@
-from flask import render_template
+from flask import render_template, request, redirect, url_for
 from flask import Flask
 
 app = Flask(__name__)
+###### TEST #######
+###### TEST #######
+###### TEST #######
 
 
-@app.route('/main')
+#Define a route for url
+@app.route('/login')
+def form():
+	return render_template('Testing/test.html')
+
+#form action
+@app.route('/hello', methods=['POST'] )
+def action():
+	firstname = request.form['firstname']
+	lastname = request.form['lastname']
+	email = request.form['email']
+	return render_template('Testing/form_action.html', firstname=firstname, lastname=lastname, email=email)
+
+@app.route('/base')
 def index():
-    return render_template("main.html")
+    return render_template("Testing/base.html")
+
+###### TEST #######
+###### TEST #######
+###### TEST #######
+
 
 @app.route('/about')
 def about():
