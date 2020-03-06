@@ -22,7 +22,7 @@ def action():
 
 @app.route('/base')
 def index():
-    return render_template("Testing/base.html")
+    return render_template("base.html")
 
 ###### TEST #######
 ###### TEST #######
@@ -49,9 +49,10 @@ def issue():
 def contact():
     return render_template("contact.html")
 
-@app.route('/elements')
-def elements():
-    return render_template("elements.html")
+@app.route('/NEW')
+def NEW():
+    return render_template("NEW.html")
+
 
 @app.route('/')
 def main1():
