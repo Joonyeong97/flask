@@ -1,7 +1,7 @@
 import app
 import pandas as pd
 from sklearn.externals import joblib
-#import joblib
+titanic = joblib.load('model/titanic.pkl')
 
 def fare_(Fare):
     if Fare <= 7.91:
@@ -62,7 +62,7 @@ def titanic_m(pclass, sex, age, Fare, embarked, name, isalone):
     column = ['Pclass', 'Sex', 'Age', 'Fare', 'Embarked', 'Title', 'IsAlone', 'Age*Class']
     qq = pd.DataFrame(a, index=column).T
 
-    titanic = joblib.load('model/titanic.pkl')
+
     pred = titanic.predict(qq)
     if pred[0] == 1:
         print('생존입니다.')
