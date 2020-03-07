@@ -1,6 +1,6 @@
 from flask import render_template, request, redirect, url_for
 from flask import Flask, abort, flash
-import test
+import titanic
 
 app = Flask(__name__)
 ###### TEST #######
@@ -30,7 +30,7 @@ def titanic2():
                 #flash('You were successfully logged in')
                 return render_template('Testing/error.html')
             else:
-                pa = test.titanic_m(pclass, sex, age, Fare, embarked, name, isalone)
+                pa = titanic.titanic_m(pclass, sex, age, Fare, embarked, name, isalone)
                 return render_template('Testing/titanic2.html', pclass=pclass, sex=sex, age=age, Fare=Fare, embarked=embarked, name=name, isalone=isalone, pa=pa)
     except:
         abort(404, description="Resource not found")
@@ -81,10 +81,6 @@ def issue():
 @app.route('/contact')
 def contact():
     return render_template("contact.html")
-
-@app.route('/NEW')
-def NEW():
-    return render_template("NEW.html")
 
 
 @app.route('/')
