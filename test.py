@@ -1,7 +1,7 @@
 import app
 import pandas as pd
 from sklearn.externals import joblib
-
+#import joblib
 
 def fare_(Fare):
     if Fare <= 7.91:
@@ -43,8 +43,8 @@ def age_(age):
         return age
 
 
-def test(pclass, sex, age, Fare, embarked, name, isalone):
-    titanic = joblib.load('model/titanic.pkl')
+def titanic_m(pclass, sex, age, Fare, embarked, name, isalone):
+
     pclass = int(pclass)
     sex = int(sex)
     age = int(age)
@@ -53,6 +53,7 @@ def test(pclass, sex, age, Fare, embarked, name, isalone):
     name = int(name)
     isalone = int(isalone)
 
+
     age_(age)
     fare_(Fare)
     a = [pclass, sex, age, Fare, embarked, name, isalone]
@@ -60,6 +61,8 @@ def test(pclass, sex, age, Fare, embarked, name, isalone):
     a.append(a[0] * a[2])
     column = ['Pclass', 'Sex', 'Age', 'Fare', 'Embarked', 'Title', 'IsAlone', 'Age*Class']
     qq = pd.DataFrame(a, index=column).T
+
+    titanic = joblib.load('model/titanic.pkl')
     pred = titanic.predict(qq)
     if pred[0] == 1:
         print('생존입니다.')

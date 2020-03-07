@@ -6,9 +6,7 @@ app = Flask(__name__)
 ###### TEST #######
 ###### TEST #######
 ###### TEST #######
-global a
-a = []
-empty = []
+
 
 #Define a route for url
 @app.route('/titanic1')
@@ -17,7 +15,7 @@ def titanic1():
 
 
 #form action
-@app.route('/titanic2', methods=['POST'] )
+@app.route('/titanic2', methods=['POST'])
 def titanic2():
     try:
         if request.method == 'POST':
@@ -32,14 +30,15 @@ def titanic2():
             #     #flash('You were successfully logged in')
             #     return render_template('Testing/error.html')
             # else:
-            pa = test.test(pclass, sex, age, Fare, embarked, name, isalone)
+            #pa =
+            pa = test.titanic_m(pclass, sex, age, Fare, embarked, name, isalone)
             return render_template('Testing/titanic2.html', pclass=pclass, sex=sex, age=age, Fare=Fare, embarked=embarked, name=name, isalone=isalone, pa=pa)
     except:
         abort(404, description="Resource not found")
     return render_template('Testing/titanic2.html')
 
 @app.route('/test')
-def test():
+def test_():
 	return render_template('Testing/test.html')
 
 @app.route('/machineleaning')
