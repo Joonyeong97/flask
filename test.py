@@ -2,6 +2,7 @@ import app
 import pandas as pd
 from sklearn.externals import joblib
 
+
 def fare_(Fare):
     if Fare <= 7.91:
         Fare = 0
@@ -18,6 +19,7 @@ def fare_(Fare):
     elif Fare >= 32:
         Fare = 3
         return Fare
+
 
 def age_(age):
     if age <= 16:
@@ -40,7 +42,9 @@ def age_(age):
         age = 4
         return age
 
-def test(pclass,sex,age,Fare,embarked,name,isalone):
+
+def test(pclass, sex, age, Fare, embarked, name, isalone):
+    titanic = joblib.load('model/titanic.pkl')
     pclass = int(pclass)
     sex = int(sex)
     age = int(age)
@@ -51,10 +55,9 @@ def test(pclass,sex,age,Fare,embarked,name,isalone):
 
     age_(age)
     fare_(Fare)
-    a = [pclass,sex,age,Fare,embarked,name,isalone]
-    titanic = joblib.load('model/titanic.pkl')
+    a = [pclass, sex, age, Fare, embarked, name, isalone]
     a = list(map(int, a))
-    a.append(a[0]*a[2])
+    a.append(a[0] * a[2])
     column = ['Pclass', 'Sex', 'Age', 'Fare', 'Embarked', 'Title', 'IsAlone', 'Age*Class']
     qq = pd.DataFrame(a, index=column).T
     pred = titanic.predict(qq)
