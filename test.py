@@ -1,7 +1,7 @@
 import app
 import pandas as pd
 from sklearn.externals import joblib
-titanic = joblib.load('model/titanic.pkl')
+
 
 def fare_(Fare):
     if Fare <= 7.91:
@@ -44,7 +44,7 @@ def age_(age):
 
 
 def titanic_m(pclass, sex, age, Fare, embarked, name, isalone):
-
+    titanic = joblib.load('model/titanic.pkl')
     pclass = int(pclass)
     sex = int(sex)
     age = int(age)
@@ -65,9 +65,7 @@ def titanic_m(pclass, sex, age, Fare, embarked, name, isalone):
 
     pred = titanic.predict(qq)
     if pred[0] == 1:
-        print('생존입니다.')
         pa = '생존입니다.'
     else:
-        print('Dead!')
         pa = '사망입니다.'
     return pa

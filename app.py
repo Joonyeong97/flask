@@ -26,13 +26,12 @@ def titanic2():
             embarked = request.form['embarked']
             name = request.form['name']
             isalone = request.form['isalone']
-            # if len(pclass) == 0 or len(sex) == 0 or len(age) == 0 or len(Fare) == 0 or len(embarked) == 0 or len(name) == 0 or len(isalone) == 0:
-            #     #flash('You were successfully logged in')
-            #     return render_template('Testing/error.html')
-            # else:
-            #pa =
-            pa = test.titanic_m(pclass, sex, age, Fare, embarked, name, isalone)
-            return render_template('Testing/titanic2.html', pclass=pclass, sex=sex, age=age, Fare=Fare, embarked=embarked, name=name, isalone=isalone, pa=pa)
+            if len(pclass) == 0 or len(sex) == 0 or len(age) == 0 or len(Fare) == 0 or len(embarked) == 0 or len(name) == 0 or len(isalone) == 0:
+                #flash('You were successfully logged in')
+                return render_template('Testing/error.html')
+            else:
+                pa = test.titanic_m(pclass, sex, age, Fare, embarked, name, isalone)
+                return render_template('Testing/titanic2.html', pclass=pclass, sex=sex, age=age, Fare=Fare, embarked=embarked, name=name, isalone=isalone, pa=pa)
     except:
         abort(404, description="Resource not found")
     return render_template('Testing/titanic2.html')
