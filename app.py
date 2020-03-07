@@ -1,28 +1,63 @@
 from flask import render_template, request, redirect, url_for
-from flask import Flask
+from flask import Flask, abort, flash
+import test
 
 app = Flask(__name__)
 ###### TEST #######
 ###### TEST #######
 ###### TEST #######
-
+global a
+a = []
+empty = []
 
 #Define a route for url
-@app.route('/login')
+@app.route('/titanic1')
 def form():
-	return render_template('Testing/test.html')
+	return render_template('Testing/titanic1.html')
+
 
 #form action
-@app.route('/hello', methods=['POST'] )
+@app.route('/titanic2', methods=['POST'] )
 def action():
-	firstname = request.form['firstname']
-	lastname = request.form['lastname']
-	email = request.form['email']
-	return render_template('Testing/form_action.html', firstname=firstname, lastname=lastname, email=email)
+    try:
+        if request.method == 'POST':
+            pclass = request.form['pclass']
+            sex = request.form['sex']
+            age = request.form['age']
+            Fare = request.form['Fare']
+            embarked = request.form['embarked']
+            name = request.form['name']
+            isalone = request.form['isalone']
+            if len(pclass) == 0 or len(sex) == 0 or len(age) == 0 or len(Fare) == 0 or len(embarked) == 0 or len(name) == 0 or len(isalone) == 0:
+                #flash('You were successfully logged in')
+                return render_template('Testing/error.html')
+            else:
+                pa = test.test(pclass,sex,age,Fare,embarked,name,isalone)
+                return render_template('Testing/titanic2.html', pclass=pclass, sex=sex, age=age, Fare=Fare, embarked=embarked, name=name, isalone=isalone, pa=pa)
+    except:
+        abort(404, description="Resource not found")
+    return render_template('Testing/titanic2.html')
+
+@app.route('/test')
+def test():
+	return render_template('Testing/test.html')
+
+@app.route('/machineleaning')
+def machineleaning():
+    return render_template("machineleaning.html")
+
 
 @app.route('/base')
 def index():
     return render_template("base.html")
+
+@app.route('/error')
+def error_m(error):
+    return render_template('Testing/error.html')
+
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('Testing/404.html')
 
 ###### TEST #######
 ###### TEST #######

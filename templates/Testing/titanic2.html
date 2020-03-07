@@ -1,0 +1,27 @@
+{% extends "base2.html" %}
+{% block explain_contents %}
+
+<div class="page-section about-page">
+    <div class="about-section">
+        <div class="col-lg-3 col-sm-6 p-0">
+ <body>
+	<h4> Titanic </h4>
+	<strong> 생존여부 </strong><br>
+<br>
+  <strong>승선권 타입</strong>      {{pclass}}<br>
+  <strong>성별</strong>          {{sex}}<br>
+  <strong>나이</strong>          {{age}}<br>
+  <strong>티켓 요금</strong>          {{Fare}}<br>
+  <strong>승선 위치</strong>          {{embarked}}<br>
+  <strong>이름 (성) </strong>          {{name}}<br>
+  <strong>혼자탑승 or 가족과 탑승</strong>          {{isalone}}<br>
+  <strong> 결과는 </strong>          <h4>{{pa}}</h4>
+
+	<br><br>
+  <button type="button" onclick="location.href='/login'">돌아가기</button>
+ </body>
+        </div>
+    </div>
+</div>>
+
+{% endblock explain_contents %}

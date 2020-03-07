@@ -1,0 +1,106 @@
+{% extends "base2.html" %}
+{% block explain_contents %}
+<!--                {% if texts %}-->
+<!--                    <textarea class="form-control"  rows="1" name="text_data">{{feel}}</textarea>-->
+<!--                {% else %}-->
+
+<!--                {% endif %}-->
+  {% if error %}
+    <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>alert 예제</title>
+    <script>
+        alert("글자를 입력해주세요.")
+    </script>
+</head>
+<body>
+</body>
+</html>
+  {% endif %}
+
+<div class="container" style="margin-top:50px;">
+    <div class="row">
+                <div class="col-lg-3 col-sm-6 p-0">
+            <div class="milestone">
+                <h2>Titanic</h2>
+                <br>
+                    <h5>머신러닝 체험</h5>
+                <h6>Random Forest</h6>
+                <h6>Accuracy : 86.76%</h6>
+                <br>
+                    <h6>만약 내가 타이타닉에 탔다면 살 수 있었을까?</h6>
+                    <br>
+                <h5>예제를 잘 읽고 꼭 숫자로 적어주세요.</h5>
+            </div>
+        </div>
+
+        <div class="col"></div>
+        <div class="col-3">
+        <form method="post" action="/hello">
+            <div class="form-group">
+
+				<label for="pclass">*승선권 타입 (숫자로 입력)</label>
+                <label for="pclass">1 = First class</label>
+                <label for="pclass">2 = Business class</label>
+                <label for="pclass">3 = Economic class</label>
+				<textarea class="form-control" id="pclass" rows="1" name="pclass"></textarea>
+
+				<br>
+				<label for="sex">*성별</label><br>
+                <label for="sex"> 남자 = 0, 여자 = 1</label>
+				<textarea class="form-control" id="sex" rows="1" name="sex"></textarea>
+
+				<br>
+				<label for="age">*나이</label>
+                <label for="age">(숫자로 입력) ex: 16</label>
+				<textarea class="form-control" id="age" rows="1" name="age"></textarea>
+
+                <br>
+                <label for="Fare">*티켓의 요금값(숫자만 입력)</label>
+                <label for="Fare">최저 = 7 달러</label>
+                <label for="Fare">최고 = 31 달러</label>
+				<textarea class="form-control" id="Fare" rows="1" name="Fare"></textarea>
+
+                <br>
+                <label for="embarked">*승선한 곳</label>
+                <label for="embarked">Southampton : 0</label>
+                <label for="embarked">Cherbourg : 1</label>
+                <label for="embarked">Queenstown : 2</label>
+				<textarea class="form-control" id="embarked" rows="1" name="embarked"></textarea>
+
+                 <br>
+                <label for="name">*결혼여부</label><br>
+                <label for="name">미혼남성 : 1</label>
+                <label for="name">미혼여성 : 2</label>
+                <br>
+                <label for="name">기혼남성 : 4</label>
+                <label for="name">기혼여성 : 3</label>
+				<textarea class="form-control" id="name" rows="1" name="name"></textarea>
+
+                 <br>
+                <label for="isalone">*동승자 여부</label>
+                <label for="isalone">동승자없음 = 0</label>
+                <label for="isalone">동승자있음 = 1</label>
+				<textarea class="form-control" id="isalone" rows="1" name="isalone"></textarea>
+
+
+            </div>
+                <button type="submit" class="btn btn-outline-success">Submit</button>
+<!--                <button type="submit" class="btn btn-outline-primary" style="float:right;">Submit</button>-->
+        </form>
+            <br><br>
+            {% if texts %}
+                <p style="font-size:30px;font-family:sans-serif;text-align:center;">{{pa}}</p><br>
+<!--                <p style="font-size:30px;font-family:sans-serif;text-align:center;">{{emotion[1]}}_{{emotion[2]}}<br><br>-->
+
+<!--                    <a href="{{emotion[3]}}"><img src="{{url_for('static', filename='img/button.jpg')}}" style="width:50px;">  {{emotion[3]}}</a></p>-->
+            {% endif %}
+        </div>
+
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock explain_contents %}
