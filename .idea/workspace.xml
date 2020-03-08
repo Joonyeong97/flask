@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01fe3210-8ff2-4e7c-9b6a-b1e731b527fb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/static/customer_img/dog.2.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
     </list>
@@ -38,19 +39,19 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\82105\Desktop\bigdata analysis\flask\static\customer_img" />
+      <recent name="C:\Users\82105\Desktop\bigdata analysis\flask\model" />
+      <recent name="C:\Users\82105\Desktop\bigdata analysis\flask\templates" />
+      <recent name="C:\Users\82105\Desktop\bigdata analysis\flask\templates\Testing" />
+      <recent name="C:\Users\82105\Desktop\bigdata analysis\flask" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\82105\Desktop\bigdata analysis\flask\templates" />
       <recent name="C:\Users\82105\Desktop\bigdata analysis\flask\templates\img_dir" />
       <recent name="C:\Users\82105\Desktop\bigdata analysis\flask\templates\Testing" />
       <recent name="C:\Users\82105\Desktop\bigdata analysis\flask" />
       <recent name="C:\Users\82105\Desktop\bigdata analysis\flask\static\img" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\82105\Desktop\bigdata analysis\flask\model" />
-      <recent name="C:\Users\82105\Desktop\bigdata analysis\flask\templates" />
-      <recent name="C:\Users\82105\Desktop\bigdata analysis\flask\templates\Testing" />
-      <recent name="C:\Users\82105\Desktop\bigdata analysis\flask" />
-      <recent name="C:\Users\82105\Desktop\bigdata analysis\flask\templates\analysis\corona" />
     </key>
   </component>
   <component name="RunManager" selected="Python.app">
@@ -129,6 +130,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="839" y="385" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583687804097">
+      <screen x="0" y="0" width="1707" height="1027" />
+    </state>
+    <state x="839" y="385" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1707.1027@0.0.1707.1027" timestamp="1583687804097" />
     <state x="644" y="248" key="FileChooserDialogImpl" timestamp="1583683637971">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
