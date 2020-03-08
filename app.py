@@ -1,7 +1,10 @@
 from flask import render_template, request, redirect, url_for
 from flask import Flask, abort, flash
+from werkzeug import secure_filename
 import titanic
+import img_load
 import sql
+import os
 
 app = Flask(__name__)
 
@@ -13,6 +16,29 @@ app = Flask(__name__)
 ###### TEST #######
 ###### TEST #######
 ###### TEST #######
+
+# 업로드 HTML 렌더링
+@app.route('/catdog')
+def render_file():
+    return render_template('img_dir/img_upload.html')
+
+
+# 파일 업로드 처리
+@app.route('/catdog2', methods=['GET', 'POST'])
+def upload_file():
+    if request.method == 'POST':
+        img_dir = os.path.join('./static/customer_img/')
+        f = request.files['file']
+        # 저장할 경로 + 파일명
+        f.save(img_dir+secure_filename(f.filename))
+        dap = img_load.cat_dog(f.filename)
+        name = img_load.panbyul(dap)
+        return render_template('img_dir/img_load.html', dap=dap, name=name)
+    return render_template('img_dir/img_load.html')
+
+
+
+# IP 주소확인
 @app.route('/ip', methods=['GET'])
 def name():
     ip = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
@@ -20,7 +46,7 @@ def name():
     return request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
     #return jsonify({'ip': request.remote_addr}), 200
     #return jsonify({'ip': request.environ['REMOTE_ADDR']}), 200
-# popup
+# 문의글
 @app.route('/pop')
 def pop():
 	return render_template('Testing/popup.html')
@@ -37,14 +63,15 @@ def ok_():
         else:
             sql.inquire(nick, email, text, ip)
             return render_template('Testing/ok_.html', nick=nick, text=text, email=email)
+# 문의글 끝
 
-#Define a route for url
+# 타이타닉 시작
 @app.route('/titanic1')
 def titanic1():
 	return render_template('Testing/titanic1.html')
 
 
-#form action
+# 타이타닉 결과물
 @app.route('/titanic2', methods=['POST'])
 def titanic2():
     try:
@@ -65,6 +92,11 @@ def titanic2():
     except:
         abort(404, description="Resource not found")
     return render_template('Testing/titanic2.html')
+
+
+@app.route('/deepleaning')
+def deepleaning():
+    return render_template("deepleaning.html")
 
 
 @app.route('/machineleaning')

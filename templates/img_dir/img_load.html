@@ -1,0 +1,22 @@
+{% extends "base2.html" %}
+{% block explain_contents %}
+<div class="page-section about-page">
+    <div class="about-section">
+        <div class="col-lg-3 col-sm-6 p-0">
+ <body>
+	<h4> 분류완료! </h4>
+<br>
+  <strong>정답 :</strong>
+	<br><h4>{{dap}} 입니다.</h4><br>
+<br>
+            <td><img src="{{url_for('static', filename='img/catdog/{}'.format(name))}}"
+                 style="height:400px; width:600px;"></td>
+
+    <h5>감사합니다.</h5>
+	<br><br>
+  <button type="button" class="btn btn-success" onclick=location.href='/catdog> 돌아가기  </button>
+ </body>
+        </div>
+    </div>
+</div>
+{% endblock explain_contents %}
