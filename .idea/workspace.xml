@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01fe3210-8ff2-4e7c-9b6a-b1e731b527fb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/img_load.py" beforeDir="false" afterPath="$PROJECT_DIR$/img_load.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/img_dir/img_load.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/img_dir/img_load.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
