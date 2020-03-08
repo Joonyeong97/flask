@@ -13,7 +13,9 @@ def panbyul(name):
 
 def cat_dog(filename):
     from PIL import Image
-    import os, glob, numpy as np
+    import os
+    import glob
+    import numpy as np
     from keras.models import load_model
 
     caltech_dir = "static/customer_img/"
