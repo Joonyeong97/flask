@@ -1,7 +1,7 @@
 
 def delete_cd(filename):
     import os
-    file = './static/customer_img'
+    file = '/static/customer_img'
     os.remove(file+'/{}'.format(filename))
 
 def panbyul(name):
@@ -16,7 +16,7 @@ def cat_dog(filename):
     import os, glob, numpy as np
     from keras.models import load_model
 
-    caltech_dir = "./static/customer_img/"
+    caltech_dir = "/static/customer_img/"
     image_w = 100
     image_h = 100
 

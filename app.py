@@ -26,7 +26,7 @@ def render_file():
 @app.route('/catdog2', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
-        img_dir = os.path.join('./static/customer_img/')
+        img_dir = os.path.join('/static/customer_img/')
         f = request.files['file']
         # 저장할 경로 + 파일명
         f.save(img_dir+f.filename)
