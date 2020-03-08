@@ -1,6 +1,5 @@
 from flask import render_template, request, redirect, url_for
 from flask import Flask, abort, flash
-from werkzeug.utils import secure_filename
 import titanic
 import img_load
 import sql
@@ -30,7 +29,7 @@ def upload_file():
         img_dir = os.path.join('./static/customer_img/')
         f = request.files['file']
         # 저장할 경로 + 파일명
-        f.save(img_dir+secure_filename(f.filename))
+        f.save(img_dir+f.filename)
         dap = img_load.cat_dog(f.filename)
         name = img_load.panbyul(dap)
         return render_template('img_dir/img_load.html', dap=dap, name=name)
