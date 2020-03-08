@@ -1,6 +1,6 @@
 from flask import render_template, request, redirect, url_for
 from flask import Flask, abort, flash
-from werkzeug import secure_filename
+from werkzeug.utils import secure_filename
 import titanic
 import img_load
 import sql
