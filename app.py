@@ -23,19 +23,30 @@ def render_file():
     return render_template('img_dir/img_upload.html')
 
 
+# # 파일 업로드 처리
+# @app.route('/catdog2', methods=['GET', 'POST'])
+# def upload_file():
+#     import os
+#     if request.method == 'POST':
+#         img_dir = os.path.join('static/customer_img/')
+#         f = request.files['file']
+#         # 저장할 경로 + 파일명
+#         f.save(img_dir+secure_filename(f.filename))
+#         dap = img_load.cat_dog(f.filename)
+#         name = img_load.panbyul(dap)
+#         return render_template('img_dir/img_load.html', dap=dap, name=name)
+#     return render_template('img_dir/img_load.html')
 # 파일 업로드 처리
 @app.route('/catdog2', methods=['GET', 'POST'])
 def upload_file():
+    import os
     if request.method == 'POST':
         img_dir = os.path.join('static/customer_img/')
         f = request.files['file']
         # 저장할 경로 + 파일명
         f.save(img_dir+secure_filename(f.filename))
-        dap = img_load.cat_dog(f.filename)
-        name = img_load.panbyul(dap)
-        return render_template('img_dir/img_load.html', dap=dap, name=name)
+        return render_template('img_dir/img_load.html')
     return render_template('img_dir/img_load.html')
-
 
 
 # IP 주소확인

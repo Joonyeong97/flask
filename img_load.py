@@ -52,5 +52,5 @@ def cat_dog(filename):
         if i[1] == 1:
             dap = pre_ans_str
         cnt += 1
-    delete_cd(filename)
+    # delete_cd(filename)
     return dap
