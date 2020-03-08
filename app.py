@@ -1,11 +1,23 @@
 from flask import render_template, request, redirect, url_for
 from flask import Flask, abort, flash
 import titanic
+import sql
 
 app = Flask(__name__)
+
 ###### TEST #######
 ###### TEST #######
 ###### TEST #######
+# file name : test.py
+# pwd : /project_name/app/test/test.py
+###### TEST #######
+###### TEST #######
+###### TEST #######
+@app.route('/ip', methods=['GET'])
+def name():
+    return request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
+    #return jsonify({'ip': request.remote_addr}), 200
+    #return jsonify({'ip': request.environ['REMOTE_ADDR']}), 200
 
 
 #Define a route for url
@@ -36,14 +48,18 @@ def titanic2():
         abort(404, description="Resource not found")
     return render_template('Testing/titanic2.html')
 
-@app.route('/test')
-def test_():
-	return render_template('Testing/test.html')
+
 
 @app.route('/machineleaning')
 def machineleaning():
     return render_template("machineleaning.html")
 
+
+
+
+@app.route('/test')
+def test_():
+	return render_template('Testing/test.html')
 
 @app.route('/base')
 def index():
@@ -56,10 +72,6 @@ def error_m(error):
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template('Testing/404.html')
-
-###### TEST #######
-###### TEST #######
-###### TEST #######
 
 
 @app.route('/about')
