@@ -16,9 +16,6 @@ def inquire(name, email, text, ip):
     cur = conn.cursor()
     sql ="""INSERT INTO inquire (name, email, text, IP_address, mmdd)
         VALUES(%s, %s, %s, %s, %s)"""
-
-
     cur.execute(sql, ('%s'%(name), '%s'%(email),'%s'%(text), '%s'%(ip), '%s'%(date)))
-
-
     conn.commit()
+    conn.close()
