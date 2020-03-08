@@ -15,10 +15,28 @@ app = Flask(__name__)
 ###### TEST #######
 @app.route('/ip', methods=['GET'])
 def name():
+    ip = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
+    print('현재 접속한 ip : ',ip)
     return request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
     #return jsonify({'ip': request.remote_addr}), 200
     #return jsonify({'ip': request.environ['REMOTE_ADDR']}), 200
+# popup
+@app.route('/pop')
+def pop():
+	return render_template('Testing/popup.html')
 
+@app.route('/ok', methods=['POST'])
+def ok_():
+    if request.method == 'POST':
+        nick = request.form['nick']
+        text = request.form['text']
+        email = request.form['email']
+        ip = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
+        if len(nick) == 0 or len(text) == 0 or len(email) == 0:
+            return render_template('Testing/error.html')
+        else:
+            sql.inquire(nick, email, text, ip)
+            return render_template('Testing/ok_.html', nick=nick, text=text, email=email)
 
 #Define a route for url
 @app.route('/titanic1')
@@ -49,13 +67,9 @@ def titanic2():
     return render_template('Testing/titanic2.html')
 
 
-
 @app.route('/machineleaning')
 def machineleaning():
     return render_template("machineleaning.html")
-
-
-
 
 @app.route('/test')
 def test_():

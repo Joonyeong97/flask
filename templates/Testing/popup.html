@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+      <style type="text/css">
+       textarea{ resize: none; }
+       body{ text-align:center; }
+        #wrapper {
+            width:500px;
+            margin : 0 auto ;
+            border:1px solid #000;
+            text-align:left;
+        }
+      </style>
+</head>
+<body>
+        <div class="col"></div>
+        <div class="col-6">
+
+        <form method="post" action="/ok" onsubmit="foo();">
+            <div class="mun">
+                <div id="wrapper">
+                <label for="nick">*닉네임</label><br>
+				<textarea class="form-control" id="nick" rows="1" cols="10"  name="nick" placeholder="닉네임"></textarea>
+
+            <br>
+
+                <label for="email">*Email(답변용)</label><br>
+				<textarea class="form-control" id="email" rows="1" cols="25"  name="email" placeholder="Email 주소" ></textarea>
+
+                    <br>
+
+				<label for="TEXT">*문의내용</label><br>
+				<textarea class="form-control" id="TEXT" rows="20" cols="50"  name="text" placeholder="내용을 입력해주세요."></textarea>
+</div>
+                <button  type="submit" class="btn btn-outline-primary" onclick="return confirm(' 전송 하시겠습니까? ')"  >전송하기</button>
+<!--                <button type="submit" class="btn btn-outline-primary" style="float:right;">Submit</button>-->
+        </form>
+        </div>
+        </div>
+        </div>
+</body>
+
+</html>
