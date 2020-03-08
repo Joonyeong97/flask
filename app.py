@@ -41,7 +41,7 @@ def render_file():
 def upload_file():
     import os
     if request.method == 'POST':
-        img_dir = os.path.join('static/customer_img/')
+        img_dir = os.path.join('/home/ubuntu/flask/static/customer_img/')
         f = request.files['file']
         # 저장할 경로 + 파일명
         f.save(img_dir+secure_filename(f.filename))
