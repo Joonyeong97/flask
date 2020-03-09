@@ -13,7 +13,6 @@ def panbyul(name):
 
 def cat_dog(filename):
     from PIL import Image
-    import os
     import glob
     import numpy as np
     from keras.models import load_model
