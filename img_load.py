@@ -38,20 +38,14 @@ def cat_dog(filename):
     model = load_model('model/multi_img_classification.model')
 
     prediction = model.predict(X)
-    cnt = 0
 
-    # 이 비교는 그냥 파일들이 있으면 해당 파일과 비교. 카테고리와 함께 비교해서 진행하는 것은 _4 파일.
     for i in prediction:
-        pre_ans = i.argmax()  # 예측 레이블
         pre_ans_str = ''
-        if pre_ans == 1:
+        if i[0] >= 0.5:
             pre_ans_str = "강아지"
-        else:
+            dap = pre_ans_str
+        if i[1] >= 0.5:
             pre_ans_str = "고양이"
-        if i[0] == 1:
             dap = pre_ans_str
-        if i[1] == 1:
-            dap = pre_ans_str
-        cnt += 1
     delete_cd(filename)
     return dap
