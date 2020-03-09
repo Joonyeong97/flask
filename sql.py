@@ -8,9 +8,11 @@ def sql_():
     return conn
 
 def inquire(name, email, text, ip):
-    import time
+    import datetime
     import pymysql
-    date = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
+    current = datetime.datetime.now()
+    nine_hour_later = current + datetime.timedelta(hours=9)
+    date = nine_hour_later.strftime("%Y-%m-%d %H:%M:%S")
     conn = sql_()
 
     cur = conn.cursor()
