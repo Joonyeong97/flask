@@ -142,8 +142,10 @@ def contact():
     return render_template("contact.html")
 
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 def main1():
+    ip = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
+    sql.connection_ip(ip)
     return render_template("index.html")
 
 @app.route('/index')
