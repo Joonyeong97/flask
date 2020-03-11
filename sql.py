@@ -27,12 +27,13 @@ def connection_ip(ip):
     import pymysql
     current = datetime.datetime.now()
     nine_hour_later = current + datetime.timedelta(hours=9)
-    date = nine_hour_later.strftime("%Y-%m-%d %H:%M:%S")
+    date = nine_hour_later.strftime("%Y-%m-%d")
+    yydd = nine_hour_later.strftime("%H:%M:%S")
     conn = sql_()
 
     cur = conn.cursor()
-    sql ="""INSERT INTO Connection_ip (IP,date)
-        VALUES(%s, %s)"""
-    cur.execute(sql, ('%s'%(ip), '%s'%(date)))
+    sql ="""INSERT INTO Connection_ip (IP,date,yydd)
+        VALUES(%s, %s, %s)"""
+    cur.execute(sql, ('%s'%(ip), '%s'%(date), '%s'%(yydd)))
     conn.commit()
     conn.close()
