@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="01fe3210-8ff2-4e7c-9b6a-b1e731b527fb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base2.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/corona_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/corona_home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/deepleaning.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/deepleaning.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/issue.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/issue.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/machineleaning.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/machineleaning.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,22 +141,22 @@
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="644" y="248" key="FileChooserDialogImpl/0.0.1707.1027@0.0.1707.1027" timestamp="1583908228084" />
-    <state width="1280" height="246" key="GridCell.Tab.0.bottom" timestamp="1583920199875">
+    <state width="1280" height="246" key="GridCell.Tab.0.bottom" timestamp="1583923370069">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state width="1280" height="246" key="GridCell.Tab.0.bottom/0.0.1707.1027@0.0.1707.1027" timestamp="1583920199875" />
-    <state width="1280" height="246" key="GridCell.Tab.0.center" timestamp="1583920199874">
+    <state width="1280" height="246" key="GridCell.Tab.0.bottom/0.0.1707.1027@0.0.1707.1027" timestamp="1583923370069" />
+    <state width="1280" height="246" key="GridCell.Tab.0.center" timestamp="1583923370068">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state width="1280" height="246" key="GridCell.Tab.0.center/0.0.1707.1027@0.0.1707.1027" timestamp="1583920199874" />
-    <state width="1280" height="246" key="GridCell.Tab.0.left" timestamp="1583920199873">
+    <state width="1280" height="246" key="GridCell.Tab.0.center/0.0.1707.1027@0.0.1707.1027" timestamp="1583923370068" />
+    <state width="1280" height="246" key="GridCell.Tab.0.left" timestamp="1583923370068">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state width="1280" height="246" key="GridCell.Tab.0.left/0.0.1707.1027@0.0.1707.1027" timestamp="1583920199873" />
-    <state width="1280" height="246" key="GridCell.Tab.0.right" timestamp="1583920199874">
+    <state width="1280" height="246" key="GridCell.Tab.0.left/0.0.1707.1027@0.0.1707.1027" timestamp="1583923370068" />
+    <state width="1280" height="246" key="GridCell.Tab.0.right" timestamp="1583923370069">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state width="1280" height="246" key="GridCell.Tab.0.right/0.0.1707.1027@0.0.1707.1027" timestamp="1583920199874" />
+    <state width="1280" height="246" key="GridCell.Tab.0.right/0.0.1707.1027@0.0.1707.1027" timestamp="1583923370069" />
     <state width="1280" height="326" key="GridCell.Tab.1.bottom" timestamp="1583653853405">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
