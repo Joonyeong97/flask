@@ -27,6 +27,7 @@ def render_file():
 @app.route('/catdog2', methods=['GET', 'POST'])
 def upload_file():
     import os
+    from flask import jsonify
     if request.method == 'POST':
         img_dir = os.path.join('static/customer_img/')
         f = request.files['file']
