@@ -3,16 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="01fe3210-8ff2-4e7c-9b6a-b1e731b527fb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/multi_img_classification - 복사본.model" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/sql.py" beforeDir="false" afterPath="$PROJECT_DIR$/sql.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/about-bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/blog/20200310.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/blog/20200310.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Testing/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Testing/test.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/analysis/corona/corona03.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/analysis/corona/corona03.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/analysis/daum.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/analysis/daum.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/analysis/naver.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/analysis/naver.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/analysis/twitter.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/analysis/twitter.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +34,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../lytPython/Python/pycharm/Testing" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -146,22 +137,22 @@
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="644" y="248" key="FileChooserDialogImpl/0.0.1707.1027@0.0.1707.1027" timestamp="1583908228084" />
-    <state width="1164" height="236" key="GridCell.Tab.0.bottom" timestamp="1583909311533">
+    <state width="1164" height="236" key="GridCell.Tab.0.bottom" timestamp="1583912670819">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state width="1164" height="236" key="GridCell.Tab.0.bottom/0.0.1707.1027@0.0.1707.1027" timestamp="1583909311533" />
-    <state width="1164" height="236" key="GridCell.Tab.0.center" timestamp="1583909311532">
+    <state width="1164" height="236" key="GridCell.Tab.0.bottom/0.0.1707.1027@0.0.1707.1027" timestamp="1583912670819" />
+    <state width="1164" height="236" key="GridCell.Tab.0.center" timestamp="1583912670819">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state width="1164" height="236" key="GridCell.Tab.0.center/0.0.1707.1027@0.0.1707.1027" timestamp="1583909311532" />
-    <state width="1164" height="236" key="GridCell.Tab.0.left" timestamp="1583909311532">
+    <state width="1164" height="236" key="GridCell.Tab.0.center/0.0.1707.1027@0.0.1707.1027" timestamp="1583912670819" />
+    <state width="1164" height="236" key="GridCell.Tab.0.left" timestamp="1583912670819">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state width="1164" height="236" key="GridCell.Tab.0.left/0.0.1707.1027@0.0.1707.1027" timestamp="1583909311532" />
-    <state width="1164" height="236" key="GridCell.Tab.0.right" timestamp="1583909311533">
+    <state width="1164" height="236" key="GridCell.Tab.0.left/0.0.1707.1027@0.0.1707.1027" timestamp="1583912670819" />
+    <state width="1164" height="236" key="GridCell.Tab.0.right" timestamp="1583912670819">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state width="1164" height="236" key="GridCell.Tab.0.right/0.0.1707.1027@0.0.1707.1027" timestamp="1583909311533" />
+    <state width="1164" height="236" key="GridCell.Tab.0.right/0.0.1707.1027@0.0.1707.1027" timestamp="1583912670819" />
     <state width="1280" height="326" key="GridCell.Tab.1.bottom" timestamp="1583653853405">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
