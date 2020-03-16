@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="01fe3210-8ff2-4e7c-9b6a-b1e731b527fb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Testing/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Testing/test.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/analysis/corona/corona03.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/analysis/corona/corona03.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/analysis/daum.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/analysis/daum.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/analysis/naver.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/analysis/naver.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/analysis/twitter.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/analysis/twitter.html" afterDir="false" />
@@ -38,7 +36,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Crawling" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
