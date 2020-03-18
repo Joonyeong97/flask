@@ -45,7 +45,6 @@ def today():
     nine_hour_later = current + datetime.timedelta(hours=9)
     date = nine_hour_later.strftime("%Y-%m-%d")
     conn = sql_()
-
     cur = conn.cursor()
     sql ="""SELECT COUNT(*) FROM Connection_ip WHERE DATE = (%s)"""
     cur.execute(sql, ('%s'%(date)))

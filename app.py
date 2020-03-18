@@ -111,7 +111,11 @@ def test_():
 
 @app.route('/base')
 def index():
-    return render_template("base.html")
+    try:
+        today = sql.today()
+    except:
+        abort(404, description="Resource not found")
+    return render_template("base.html", today=today)
 
 @app.route('/error')
 def error_m(error):
@@ -147,11 +151,18 @@ def contact():
 def main1():
     ip = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
     sql.connection_ip(ip)
-    return render_template("index.html")
+    try:
+        today = sql.today()
+    except:
+        abort(404, description="Resource not found")
+    return render_template("index.html", today=today)
 
 @app.route('/index', methods=['GET'])
 def index2():
-    today = sql.today()
+    try:
+        today = sql.today()
+    except:
+        abort(404, description="Resource not found")
     return render_template("index.html", today=today)
 
 
