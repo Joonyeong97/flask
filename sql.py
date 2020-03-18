@@ -54,3 +54,15 @@ def today():
     today = pet_val[0]
     conn.close()
     return today
+
+def total():
+    conn = sql_()
+    cur = conn.cursor()
+    sql ="""SELECT COUNT(*) FROM Connection_ip"""
+    cur.execute(sql)
+    row = cur.fetchall()
+    for pet in row:
+        pet_val = list(pet.values())
+    total = pet_val[0]
+    conn.close()
+    return total

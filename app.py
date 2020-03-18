@@ -153,17 +153,19 @@ def main1():
     sql.connection_ip(ip)
     try:
         today = sql.today()
+        total = sql.total()
     except:
         abort(404, description="Resource not found")
-    return render_template("index.html", today=today)
+    return render_template("index.html", today=today, total=total)
 
 @app.route('/index', methods=['GET'])
 def index2():
     try:
         today = sql.today()
+        total = sql.total()
     except:
         abort(404, description="Resource not found")
-    return render_template("index.html", today=today)
+    return render_template("index.html", today=today, total=total)
 
 
 @app.route('/twitter')
