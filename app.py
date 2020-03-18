@@ -149,9 +149,10 @@ def main1():
     sql.connection_ip(ip)
     return render_template("index.html")
 
-@app.route('/index')
+@app.route('/index', methods=['GET'])
 def index2():
-    return render_template("index.html")
+    today = sql.today()
+    return render_template("index.html", today=today)
 
 
 @app.route('/twitter')

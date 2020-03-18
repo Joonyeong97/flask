@@ -37,3 +37,21 @@ def connection_ip(ip):
     cur.execute(sql, ('%s'%(ip), '%s'%(date), '%s'%(yydd)))
     conn.commit()
     conn.close()
+
+def today():
+    import datetime
+    import pymysql
+    current = datetime.datetime.now()
+    nine_hour_later = current + datetime.timedelta(hours=9)
+    date = nine_hour_later.strftime("%Y-%m-%d")
+    conn = sql_()
+
+    cur = conn.cursor()
+    sql ="""SELECT COUNT(*) FROM Connection_ip WHERE DATE = (%s)"""
+    cur.execute(sql, ('%s'%(date)))
+    row = cur.fetchall()
+    for pet in row:
+        pet_val = list(pet.values())
+    today = pet_val[0]
+    conn.close()
+    return today
