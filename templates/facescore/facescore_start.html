@@ -1,0 +1,98 @@
+{% extends "base2.html" %}
+{% block explain_contents %}
+<!--<html>-->
+<!--   <body>-->
+<!--      <form action = "fileUpload" method = "POST"-->
+<!--         enctype = "multipart/form-data">-->
+<!--         <input type = "file" name = "file" />-->
+<!--         <input type = "submit"/>-->
+<!--      </form>-->
+<!--   </body>-->
+<!--</html>-->
+<body>
+<style>
+    table {
+        text-align: center;
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    tr, td {
+        border: 1px solid black;
+    }
+    .form-group {
+        padding: 60px 0px 20px 0px;
+    }
+
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader(); //파일을 읽기 위한 FileReader객체 생성
+                    reader.onload = function (e) {
+                    //파일 읽어들이기를 성공했을때 호출되는 이벤트 핸들러
+                        $('#blah').attr('src', e.target.result);
+                        //이미지 Tag의 SRC속성에 읽어들인 File내용을 지정
+                        //(아래 코드에서 읽어들인 dataURL형식)
+                    }
+                    reader.readAsDataURL(input.files[0]);
+                    //File내용을 읽어 dataURL형식의 문자열로 저장
+                }
+            }//readURL()--
+
+            //file 양식으로 이미지를 선택(값이 변경) 되었을때 처리하는 코드
+            $("#imgInp").change(function(){
+                //alert(this.value); //선택한 이미지 경로 표시
+                readURL(this);
+            });
+         });
+
+  </script>
+
+</style>
+
+<!-- /.container -->
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-lg-3 col-sm-6 p-0">
+            <div class="milestone">
+                <h3>재미로 보는</h3>
+                <h3>얼굴점수</h3>
+                 <h3>테스트</h3>
+                <br>
+                    <h5>딥러닝 체험</h5>
+                <h6>CNN</h6>
+                <h6>Convolutional neural network</h6>
+                <br>
+                    <h6>딥러닝을 이용한 </h6>
+                <h6>얼굴점수 테스트 입니다.</h6>
+                <br>
+            <h6>꼭 파일 이미지는</h6>
+                <h4> JPG </h4>
+                <h6>이미지 파일만 이용해주세요.</h6>
+                    <br>
+                <h5> 참고 </h5>
+                <li><a href="http://taewan.kim/post/cnn/"> CNN 이란?</a></li>
+                <li><a href="https://machinelearningmastery.com/how-to-develop-a-convolutional-neural-network-to-classify-photos-of-dogs-and-cats/">자세한 코드 참고</a></li>
+            </div>
+        </div>
+        <div class="col-8">
+                <form action="/facescore" method="POST" enctype="multipart/form-data">
+                    <div class="form-group" style="display: flex;">
+                        <input type="file" class="form-control-file" id="exampleInputFile" name="file">
+                        <br>
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-outline-primary">Upload</button></br>
+
+            </form>
+        </div>
+        </div>
+        <div class="col"></div>
+    </div>
+    <!-- /.row -->
+</div>
+</body>
+{% endblock explain_contents %}

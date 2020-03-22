@@ -4,6 +4,7 @@ from werkzeug.utils import secure_filename
 import titanic
 import img_load
 import sql
+import face_image
 import os
 
 app = Flask(__name__)
@@ -38,7 +39,27 @@ def upload_file():
         return render_template('img_dir/img_load.html', dap=dap, name=name)
     return render_template('img_dir/img_load.html')
 
+# 얼굴 점수
+@app.route('/facescore_start')
+def face_start():
+    return render_template('facescore/facescore_start.html')
 
+
+# 얼굴 파일 업로드 처리
+@app.route('/facescore', methods=['GET', 'POST'])
+def face_end():
+    import os
+    if request.method == 'POST':
+        img_dir = os.path.join('static/customer_img/')
+        f = request.files['file']
+        # 저장할 경로 + 파일명
+        f.save(img_dir+secure_filename(f.filename))
+        name = (f.filename)
+        print(name)
+        dap = face_image.facescore(f.filename)
+
+        return render_template('facescore/facescore.html', dap=dap, name=name)
+    return render_template('facescore/facescore.html')
 
 # IP 주소확인
 @app.route('/ip', methods=['GET'])

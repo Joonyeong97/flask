@@ -1,0 +1,20 @@
+{% extends "base2.html" %}
+{% block explain_contents %}
+<div class="page-section about-page">
+    <div class="about-section">
+
+ <body>
+	<h4> 업로드하신 얼굴의 점수입니다. </h4>
+
+            <td><img src="{{url_for('static', filename='face/{}'.format(name))}}" width="700" height="400"
+                 style="height:400px; width:600px;"></td>
+
+    <h4>{{dap}}</h4>
+    <h5>감사합니다.</h5>
+	<br><br>
+  <button type="button" class="btn btn-success" onclick=location.href='/facescore_start'> 돌아가기  </button>
+ </body>
+
+    </div>
+</div>
+{% endblock explain_contents %}
