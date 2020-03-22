@@ -42,7 +42,7 @@ def facescore(name):
 
     if preds[0] <= 3.0:
         jum = '점수는 숫자에 불과합니다.'
-    elif preds[0] >= 3.0 or preds[0] <= 3.99:
+    elif preds[0] <= 3.99:
         jum = '좋은 인상을 가지셨네요!'
     elif preds[0] >= 4.0:
         jum = '정말 퍼펙트한 인상입니다.'
