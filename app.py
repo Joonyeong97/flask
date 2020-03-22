@@ -55,7 +55,6 @@ def face_end():
         # 저장할 경로 + 파일명
         f.save(img_dir+secure_filename(f.filename))
         name = (f.filename)
-        print(name)
         dap = face_image.facescore(f.filename)
 
         return render_template('facescore/facescore.html', dap=dap, name=name)
