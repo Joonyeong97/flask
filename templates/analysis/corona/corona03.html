@@ -1,7 +1,10 @@
 {% extends "base.html" %}
 {% block explain_contents %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
-		</header>
+
 		<div class="site-content-warp">
 			<!-- Left Side section -->
 			<div class="main-sidebar">
@@ -25,9 +28,34 @@
 			</div>
 			<!-- Left Side section end -->
 			<!-- Page start -->
+				<!-- 텍스트~~	-->
+			<div class="container">
+					  <div class="dropdown">
+						<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+						  목록보기
+						</button>
+					  <p>이미 지난 결과를 볼수 있습니다.</p>
 
+						<div class="dropdown-menu">
+						  <a class="dropdown-item" href="corona02">2020/02</a>
+						  <a class="dropdown-item" href="corona03">2020/03</a>
+<!--						  <a class="dropdown-item-text" href="#">Text Link</a>-->
+<!--						  <span class="dropdown-item-text">Just Text</span>-->
+						</div>
+					  </div>
+					</div>
+<!-- TEXT 끝-->
 
 			<div class="page-section blog-page">
+
+			<div class="blog-post-item">
+						<div class="post-date">
+							<h3>22</h3>
+							<p>03<br>2020</p>
+						</div>
+						<img src="static/img/blog/20200322.png" border="0" width="600" height="400"/>
+						<a href="https://coronaboard.kr/" class="site-btn"> 코로나 현재상황 보기 <img src="static/img/arrow-right.png" alt=""></a>
+					</div>
 
 				<div class="blog-post-item">
 						<div class="post-date">

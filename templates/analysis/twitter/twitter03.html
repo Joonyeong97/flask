@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 {% block explain_contents %}
-		</header>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
 		<div class="site-content-warp">
 			<!-- Left Side section -->
 			<div class="main-sidebar">
@@ -24,11 +27,42 @@
 			</div>
 			<!-- Left Side section end -->
 			<!-- Page start -->
+				<!-- 텍스트~~	-->
+			<div class="container">
+					  <div class="dropdown">
+						<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+						  목록보기
+						</button>
+					  <p>이미 지난 이슈를 볼수 있습니다.</p>
 
+						<div class="dropdown-menu">
+						  <a class="dropdown-item" href="twitter02">2020/02</a>
+						  <a class="dropdown-item" href="twitter03">2020/03</a>
+<!--						  <a class="dropdown-item-text" href="#">Text Link</a>-->
+<!--						  <span class="dropdown-item-text">Just Text</span>-->
+						</div>
+					  </div>
+					</div>
+<!--
+				TEXT 입력창
+-->
 
 			<div class="page-section blog-page">
 
 				<div class="blog-posts">
+
+					<div class="blog-post-item">
+							<div class="post-date">
+								<h3>22</h3>
+								<p>03<br>2020</p>
+							</div>
+							<img src="static/img/wordcloud/twitter/twitter_20200322.png" border="0" width="600" height="400"/>
+						<p> 트위터 검색어 : 벗방 </p>
+						<p> 모든 검색어는 구글트렌드에서 1위만 검색합니다.</p>
+					</div>
+
+
+
 					<div class="blog-post-item">
 							<div class="post-date">
 								<h3>21</h3>
@@ -36,9 +70,9 @@
 							</div>
 							<img src="static/img/wordcloud/twitter/twitter_20200321.png" border="0" width="600" height="400"/>
 						<p> 트위터 검색어 : N번방사건 </p>
+						<p> 모든 검색어는 구글트렌드에서 1위만 검색합니다.</p>
 					</div>
 
-				<div class="blog-posts">
 					<div class="blog-post-item">
 							<div class="post-date">
 								<h3>20</h3>
@@ -48,7 +82,6 @@
 						<p> 트위터 검색어 : 코로나19 </p>
 					</div>
 
-				<div class="blog-posts">
 					<div class="blog-post-item">
 							<div class="post-date">
 								<h3>19</h3>
@@ -149,7 +182,6 @@
 						<p> 트위터 검색어 : 식약처 </p>
 					</div>
 
-				<div class="blog-posts">
 
 					<div class="blog-post-item">
 							<div class="post-date">
@@ -226,47 +258,6 @@
 					<p> 트위터 검색어 : 차이나게이트 </p>
 
 				</div>
-
-					<div class="blog-post-item">
-						<div class="post-date">
-							<h3>29</h3>
-							<p>02<br>2020</p>
-						</div>
-						<img src="static/img/wordcloud/twitter_0229.png" border="0" width="600" height="400"/>
-					<p> 트위터 검색어 : 휴일지킴이약국 </p>
-
-				</div>
-
-
-					<div class="blog-post-item">
-						<div class="post-date">
-							<h3>28</h3>
-							<p>02<br>2020</p>
-						</div>
-						<img src="static/img/wordcloud/twitter_0228_m.png" border="0" width="600" height="400"/>
-					<p> 트위터 검색어 : 뮤직뱅크 </p>
-						<img src="static/img/wordcloud/twitter_0228.png" border="0" width="600" height="400"/>
-					<p> 트위터 검색어 : 이시언 </p>
-				</div>
-
-
-				<div class="blog-post-item">
-						<div class="post-date">
-							<h3>27</h3>
-							<p>02<br>2020</p>
-						</div>
-						<img src="static/img/wordcloud/twitter_0227.png" border="0" width="600" height="400"/>
-					<p> 트위터 검색어 : 코로나 </p>
-						<img src="static/img/wordcloud/twitter_0227_2.png" border="0" width="600" height="400"/>
-					<p> 트위터 검색어 : 신천지 </p>
-				</div>
-
-				<div class="blog-post-item">
-					<div class="blog-thumb set-bg" data-setbg="." >
-						<div class="post-date">
-						</div>
-					</div>
-						</div>
 				</div>
 			</div>
 			<!-- Page end -->

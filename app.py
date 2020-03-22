@@ -167,22 +167,31 @@ def index2():
         abort(404, description="Resource not found")
     return render_template("index.html", today=today, total=total)
 
+@app.route('/twitter02')
+def twitter02():
+    return render_template("analysis/twitter/twitter02.html")
+@app.route('/twitter03')
+def twitter03():
+    return render_template("analysis/twitter/twitter03.html")
 
-@app.route('/twitter')
-def twitter():
-    return render_template("analysis/twitter.html")
 
-@app.route('/naver')
-def naver():
-    return render_template("analysis/naver.html")
 
-@app.route('/daum')
-def daum():
-    return render_template("analysis/daum.html")
+@app.route('/naver02')
+def naver02():
+    return render_template("analysis/naver/naver02.html")
+@app.route('/naver03')
+def naver03():
+    return render_template("analysis/naver/naver03.html")
 
-@app.route('/corona')
-def corona_home():
-    return render_template("corona_home.html")
+
+
+@app.route('/daum02')
+def daum02():
+    return render_template("analysis/daum/daum02.html")
+@app.route('/daum03')
+def daum03():
+    return render_template("analysis/daum/daum03.html")
+
 
 if __name__ == '__main__':
     start = input('온라인은 y / 오프라인은 아무키나 : ')
