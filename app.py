@@ -12,8 +12,25 @@ app = Flask(__name__)
 ###### TEST #######
 ###### TEST #######
 ###### TEST #######
-# file name : test.py
-# pwd : /project_name/app/test/test.py
+@app.route('/admin', methods=['GET','POST'])
+def newtest():
+    import os
+    if request.method == 'POST':
+        PASS = request.form['PASS']
+        if len(PASS) == 0:
+            ip = 'X'
+            date = 'X'
+            wi = 1
+            return render_template('new_test/test1.html', ip=ip, date=date, wi=wi)
+        if int(PASS) != 1542 or len(PASS) == 0:
+            ip = 'X'
+            date = 'X'
+            wi = 1
+            return render_template('new_test/test1.html', ip=ip, date=date, wi=wi)
+        date1 = request.form['date1']
+        ip, date, wi = sql.admin(PASS,date1)
+        return render_template('new_test/test1.html', ip=ip, date=date, wi=wi)
+    return render_template('new_test/test1.html')
 ###### TEST #######
 ###### TEST #######
 ###### TEST #######

@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01fe3210-8ff2-4e7c-9b6a-b1e731b527fb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/new_test/test1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/face_image.py" beforeDir="false" afterPath="$PROJECT_DIR$/face_image.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql.py" beforeDir="false" afterPath="$PROJECT_DIR$/sql.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/analysis/corona/corona03.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/analysis/corona/corona03.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/analysis/daum/daum03.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/analysis/daum/daum03.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/analysis/naver/naver03.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/analysis/naver/naver03.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/analysis/twitter/twitter03.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/analysis/twitter/twitter03.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base2.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base2.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -34,7 +41,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/facescore" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -133,26 +140,26 @@
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="839" y="385" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1707.1027@0.0.1707.1027" timestamp="1583687804097" />
-    <state x="644" y="248" key="FileChooserDialogImpl" timestamp="1584854831384">
+    <state x="644" y="248" key="FileChooserDialogImpl" timestamp="1584876183625">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state x="644" y="248" key="FileChooserDialogImpl/0.0.1707.1027@0.0.1707.1027" timestamp="1584854831384" />
-    <state width="1148" height="208" key="GridCell.Tab.0.bottom" timestamp="1584859452677">
+    <state x="644" y="248" key="FileChooserDialogImpl/0.0.1707.1027@0.0.1707.1027" timestamp="1584876183625" />
+    <state width="1148" height="208" key="GridCell.Tab.0.bottom" timestamp="1584884421330">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state width="1148" height="208" key="GridCell.Tab.0.bottom/0.0.1707.1027@0.0.1707.1027" timestamp="1584859452677" />
-    <state width="1148" height="208" key="GridCell.Tab.0.center" timestamp="1584859452677">
+    <state width="1148" height="208" key="GridCell.Tab.0.bottom/0.0.1707.1027@0.0.1707.1027" timestamp="1584884421330" />
+    <state width="1148" height="208" key="GridCell.Tab.0.center" timestamp="1584884421330">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state width="1148" height="208" key="GridCell.Tab.0.center/0.0.1707.1027@0.0.1707.1027" timestamp="1584859452677" />
-    <state width="1148" height="208" key="GridCell.Tab.0.left" timestamp="1584859452677">
+    <state width="1148" height="208" key="GridCell.Tab.0.center/0.0.1707.1027@0.0.1707.1027" timestamp="1584884421330" />
+    <state width="1148" height="208" key="GridCell.Tab.0.left" timestamp="1584884421330">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state width="1148" height="208" key="GridCell.Tab.0.left/0.0.1707.1027@0.0.1707.1027" timestamp="1584859452677" />
-    <state width="1148" height="208" key="GridCell.Tab.0.right" timestamp="1584859452677">
+    <state width="1148" height="208" key="GridCell.Tab.0.left/0.0.1707.1027@0.0.1707.1027" timestamp="1584884421330" />
+    <state width="1148" height="208" key="GridCell.Tab.0.right" timestamp="1584884421330">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state width="1148" height="208" key="GridCell.Tab.0.right/0.0.1707.1027@0.0.1707.1027" timestamp="1584859452677" />
+    <state width="1148" height="208" key="GridCell.Tab.0.right/0.0.1707.1027@0.0.1707.1027" timestamp="1584884421330" />
     <state width="1280" height="326" key="GridCell.Tab.1.bottom" timestamp="1583653853405">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>

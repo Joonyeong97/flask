@@ -66,3 +66,52 @@ def total():
     total = pet_val[0]
     conn.close()
     return total
+
+def admin(PASS,date1):
+    try:
+        if len(str(date1)) != 8:
+            ip = 'X'
+            date = 'X'
+            wi = 1
+            return ip, date, wi
+        if len(str(date1)) == 0:
+            conn = sql_()
+            cur = conn.cursor()
+            sql = """SELECT * FROM Connection_ip"""
+            cur.execute(sql)
+            row = cur.fetchall()
+            real = []
+            for pet in row:
+                pet_val = list(pet.values())
+                real.append(pet_val)
+            ip = []
+            date = []
+            for i, q in enumerate(real):
+                ip.append(q[0])
+                date.append(q[1].strftime('%Y%m%d'))
+            wi = len(ip)
+            conn.close()
+            return ip, date , wi
+        date = int(date1)
+        conn = sql_()
+        cur = conn.cursor()
+        sql = """SELECT * FROM Connection_ip where date >= (%s)"""
+        cur.execute(sql, '%s' % (date))
+        row = cur.fetchall()
+        real = []
+        for pet in row:
+            pet_val = list(pet.values())
+            real.append(pet_val)
+        ip = []
+        date = []
+        for i, q in enumerate(real):
+            ip.append(q[0])
+            date.append(q[1].strftime('%Y%m%d'))
+        wi = len(ip)
+        conn.close()
+        return ip, date, wi
+    except:
+        ip = 'X'
+        date = 'X'
+        wi = 1
+        return ip, date, wi
