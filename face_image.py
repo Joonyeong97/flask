@@ -7,10 +7,10 @@ def facescore(name):
     import cv2
     from matplotlib import pyplot as plt
     import numpy as np
-
     from keras.models import load_model
-
     import glob
+
+
     plt.style.use('dark_background')
 
     model = load_model('model/facemodel.h5')
@@ -26,7 +26,6 @@ def facescore(name):
     imgs_test_resized.append(img_resized)
 
     imgs_test_resized = np.array(imgs_test_resized, dtype=np.float32)
-
 
     preds = model.predict(imgs_test_resized)
     plt.figure(figsize=(7,5))

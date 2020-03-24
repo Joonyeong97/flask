@@ -6,7 +6,7 @@ import img_load
 import sql
 import face_image
 import os
-
+import datetime
 app = Flask(__name__)
 
 ###### TEST #######
@@ -27,6 +27,7 @@ def newtest():
             date = 'X'
             wi = 1
             return render_template('new_test/test1.html', ip=ip, date=date, wi=wi)
+
         date1 = request.form['date1']
         ip, date, wi = sql.admin(PASS,date1)
         return render_template('new_test/test1.html', ip=ip, date=date, wi=wi)
@@ -67,12 +68,15 @@ def face_start():
 def face_end():
     import os
     if request.method == 'POST':
+        current = datetime.datetime.now()
+        nine_hour_later = current + datetime.timedelta(hours=9)
+        date = nine_hour_later.strftime("%Y%m%d_%H%M%S")
         img_dir = os.path.join('static/customer_img/')
         f = request.files['file']
         # 저장할 경로 + 파일명
-        f.save(img_dir+secure_filename(f.filename))
-        name = (f.filename)
-        dap = face_image.facescore(f.filename)
+        name = date+(f.filename)
+        f.save(img_dir + secure_filename(name))
+        dap = face_image.facescore(name)
 
         return render_template('facescore/facescore.html', dap=dap, name=name)
     return render_template('facescore/facescore.html')
