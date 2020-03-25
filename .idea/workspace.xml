@@ -3,13 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="01fe3210-8ff2-4e7c-9b6a-b1e731b527fb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/face_image.py" beforeDir="false" afterPath="$PROJECT_DIR$/face_image.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/customer_img/20190212_225356.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/customer_img/2BBFFB93-BD23-4DED-9C18-CF143CB41221.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/customer_img/F0DC374F-2E16-42A4-BFDC-729F710C703E.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/customer_img/dog.2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/customer_img/ms.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Testing/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Testing/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/analysis/corona/corona03.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/analysis/corona/corona03.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/analysis/daum/daum03.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/analysis/daum/daum03.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/analysis/naver/naver03.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/analysis/naver/naver03.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/analysis/twitter/twitter03.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/analysis/twitter/twitter03.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,26 +137,26 @@
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="839" y="385" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1707.1027@0.0.1707.1027" timestamp="1583687804097" />
-    <state x="644" y="248" key="FileChooserDialogImpl" timestamp="1585028002000">
+    <state x="644" y="248" key="FileChooserDialogImpl" timestamp="1585111989451">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state x="644" y="248" key="FileChooserDialogImpl/0.0.1707.1027@0.0.1707.1027" timestamp="1585028002000" />
-    <state width="1328" height="208" key="GridCell.Tab.0.bottom" timestamp="1585046446978">
+    <state x="644" y="248" key="FileChooserDialogImpl/0.0.1707.1027@0.0.1707.1027" timestamp="1585111989451" />
+    <state width="1328" height="208" key="GridCell.Tab.0.bottom" timestamp="1585058421408">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state width="1328" height="208" key="GridCell.Tab.0.bottom/0.0.1707.1027@0.0.1707.1027" timestamp="1585046446978" />
-    <state width="1328" height="208" key="GridCell.Tab.0.center" timestamp="1585046446977">
+    <state width="1328" height="208" key="GridCell.Tab.0.bottom/0.0.1707.1027@0.0.1707.1027" timestamp="1585058421408" />
+    <state width="1328" height="208" key="GridCell.Tab.0.center" timestamp="1585058421408">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state width="1328" height="208" key="GridCell.Tab.0.center/0.0.1707.1027@0.0.1707.1027" timestamp="1585046446977" />
-    <state width="1328" height="208" key="GridCell.Tab.0.left" timestamp="1585046446977">
+    <state width="1328" height="208" key="GridCell.Tab.0.center/0.0.1707.1027@0.0.1707.1027" timestamp="1585058421408" />
+    <state width="1328" height="208" key="GridCell.Tab.0.left" timestamp="1585058421408">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state width="1328" height="208" key="GridCell.Tab.0.left/0.0.1707.1027@0.0.1707.1027" timestamp="1585046446977" />
-    <state width="1328" height="208" key="GridCell.Tab.0.right" timestamp="1585046446978">
+    <state width="1328" height="208" key="GridCell.Tab.0.left/0.0.1707.1027@0.0.1707.1027" timestamp="1585058421408" />
+    <state width="1328" height="208" key="GridCell.Tab.0.right" timestamp="1585058421408">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state width="1328" height="208" key="GridCell.Tab.0.right/0.0.1707.1027@0.0.1707.1027" timestamp="1585046446978" />
+    <state width="1328" height="208" key="GridCell.Tab.0.right/0.0.1707.1027@0.0.1707.1027" timestamp="1585058421408" />
     <state width="1280" height="326" key="GridCell.Tab.1.bottom" timestamp="1583653853405">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
