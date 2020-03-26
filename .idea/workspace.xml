@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="01fe3210-8ff2-4e7c-9b6a-b1e731b527fb" name="Default Changelist" comment="" />
+    <list default="true" id="01fe3210-8ff2-4e7c-9b6a-b1e731b527fb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/analysis/corona/corona03.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/analysis/corona/corona03.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/analysis/daum/daum03.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/analysis/daum/daum03.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/analysis/naver/naver03.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/analysis/naver/naver03.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/analysis/twitter/twitter03.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/analysis/twitter/twitter03.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -130,10 +136,10 @@
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="839" y="385" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1707.1027@0.0.1707.1027" timestamp="1583687804097" />
-    <state x="644" y="248" key="FileChooserDialogImpl" timestamp="1585111989451">
+    <state x="644" y="248" key="FileChooserDialogImpl" timestamp="1585235802872">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state x="644" y="248" key="FileChooserDialogImpl/0.0.1707.1027@0.0.1707.1027" timestamp="1585111989451" />
+    <state x="644" y="248" key="FileChooserDialogImpl/0.0.1707.1027@0.0.1707.1027" timestamp="1585235802872" />
     <state width="1328" height="208" key="GridCell.Tab.0.bottom" timestamp="1585058421408">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
