@@ -45,4 +45,6 @@ def facescore(name):
         jum = '좋은 인상을 가지셨네요!'
     elif preds[0] >= 4.0:
         jum = '정말 퍼펙트한 인상입니다.'
+    else:
+        jum = preds[0]
     return jum
