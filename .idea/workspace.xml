@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="01fe3210-8ff2-4e7c-9b6a-b1e731b527fb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/face_image.py" beforeDir="false" afterPath="$PROJECT_DIR$/face_image.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/analysis/corona/corona03.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/analysis/corona/corona03.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/analysis/daum/daum03.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/analysis/daum/daum03.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/analysis/naver/naver03.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/analysis/naver/naver03.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/analysis/twitter/twitter03.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/analysis/twitter/twitter03.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
