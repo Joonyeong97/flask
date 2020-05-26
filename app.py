@@ -208,6 +208,28 @@ def index2():
         abort(404, description="Resource not found")
     return render_template("index.html", today=today, total=total)
 
+@app.route('/crawl', methods=['GET','POST'])
+def crawl():
+    if request.method == 'GET':
+        try:
+            return render_template("Testing/crawl.html")
+        except:
+            abort(404, description="Resource not found")
+    if request.method == 'POST':
+        PASS = request.form['crawl']
+        try:
+            if int(PASS) != 1542:
+                crawls = '비밀번호 에러'
+                return render_template("Testing/crawl.html", crawls=crawls)
+            elif int(PASS) == 1542:
+                crawls = '통과'
+                return render_template("Testing/crawl.html", crawls=crawls)
+            else:
+                pass
+        except:
+            abort(404, description="Resource not found")
+    return render_template("Testing/crawl.html")
+
 @app.route('/twitter02')
 def twitter02():
     return render_template("analysis/twitter/twitter02.html")
@@ -235,8 +257,9 @@ def daum03():
 
 
 if __name__ == '__main__':
-    start = input('온라인은 y / 오프라인은 아무키나 : ')
-    if start == 'y':
-        app.run(host='0.0.0.0', port=80)
-    else:
-        app.run(host='127.0.0.1', port=80)
+    app.run(host='127.0.0.1', port=80, debug=True)
+    # start = input('온라인은 y / 오프라인은 아무키나 : ')
+    # if start == 'y':
+    #     app.run(host='0.0.0.0', port=80)
+    # else:
+    #     app.run(host='127.0.0.1', port=80, debug = True)
