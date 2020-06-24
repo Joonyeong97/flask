@@ -7,13 +7,15 @@ import sql
 import face_image
 import os
 import datetime
-# '''Plotly 예제'''
+import pandas as pd
+import numpy as np
+app = Flask(__name__)
+# '''Plotly 예제'app = Flask(__name__)
+# ''
 # import json
 # import plotly
 # import pandas as pd
 # import numpy as np
-# app = Flask(__name__)
-#
 #
 # @app.route('/plotly')
 # def plotly():
