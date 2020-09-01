@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block explain_contents %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+		<div class="site-content-warp">
+			<!-- Left Side section -->
+			<div class="main-sidebar">
+				<div class="mb-warp">
+					<a href="index" class="site-logo">
+						<h2>Data Cook</h2>
+						<p>BigData analysis</p>
+					</a>
+					<div class="about-info">
+						<h2> Daum News </h2>
+						<h2> Issue <h2>
+						<p>  </p>
+					</div>
+					<ul class="contact-info">
+						<li>대한민국</li>
+						<li>제주특별자치도</li>
+						<li><a href="mailto:lyt970120@gmail.com">lyt970120@gmail.com</a></li>
+					</ul>
+				<a href="pop" class="site-btn" onclick="window.open(this.href, '_blank', 'width=600,height=800, scrollbars=no, resizable=no, toolbars=no, menubar=no'); return false;">문의하기 <img src="static/img/arrow-right.png" alt=""></a>
+				</div>
+			</div>
+			<!-- Left Side section end -->
+			<!-- Page start -->
+				<!-- 텍스트~~	-->
+			<div class="container">
+					  <div class="dropdown">
+						<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+						  목록보기
+						</button>
+					  <p>이미 지난 이슈를 볼수 있습니다.</p>
+
+						<div class="dropdown-menu">
+						  <a class="dropdown-item" href="daum02">2020/02</a>
+						  <a class="dropdown-item" href="daum03">2020/03</a>
+<!--						  <a class="dropdown-item-text" href="#">Text Link</a>-->
+<!--						  <span class="dropdown-item-text">Just Text</span>-->
+						</div>
+					  </div>
+					</div>
+<!--
+				TEXT 입력창
+-->
+
+
+            {% if date %}
+                <p style="font-size:30px;font-family:sans-serif;text-align:center;">{{pa}}</p><br>
+            			<div class="page-section blog-page">
+			<div class="blog-posts">
+
+			<div class="blog-post-item">
+						<div class="post-date">
+							<h3>{{date[6:]}}</h3>
+							<p>{{date[4:6]}}<br>{{date[:4]}}</p>
+						</div>
+						<img src="static/crawl_img/daum/daum_{{date}}.png" border="0" width="600" height="400"/>
+					<p>{{date}} 일자 다음뉴스 랭킹 1위 ~ 50위 입니다. </p>
+					</div>
+
+				</div>
+			</div>
+			{% endif %}
+			<!-- Page end -->
+			</div>
+
+
+
+{% endblock explain_contents %}

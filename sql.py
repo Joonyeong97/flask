@@ -7,6 +7,27 @@ def sql_():
                            cursorclass=pymysql.cursors.DictCursor)
     return conn
 
+def twi1(date,search_n):
+    conn = sql_()
+    cur = conn.cursor()
+    date = int(date)
+    sql ="""INSERT INTO Twitter_info (dates,search_n) VALUES(%s, %s)"""
+    cur.execute(sql, ('%s'%(date), '%s'%(search_n)))
+    conn.commit()
+    conn.close()
+
+def twi2(date):
+    conn = sql_()
+    cur = conn.cursor()
+    sql ="""SELECT search_n FROM Twitter_info WHERE dates = (%s)"""
+    cur.execute(sql, ('%s'%(date)))
+    row = cur.fetchall()
+    for pet in row:
+        pet_val = list(pet.values())
+    search_n = pet_val[0]
+    conn.close()
+    return search_n
+
 def inquire(name, email, text, ip):
     import datetime
     import pymysql

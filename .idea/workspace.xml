@@ -2,8 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01fe3210-8ff2-4e7c-9b6a-b1e731b527fb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Crawling.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/file_update.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/analysis/daum/DAUM.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/analysis/naver/NAVER.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/analysis/twitter/TWITTER.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/HOME.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/HOME.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/dbModule.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql.py" beforeDir="false" afterPath="$PROJECT_DIR$/sql.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Testing/crawl.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/crawl.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -22,7 +32,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1YNZ7T1V1VNG3mqwNdtFmfncchi" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -31,23 +43,23 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SNScrawling" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/analysis/twitter" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\82105\Desktop\Data_Analysis\Python\Develop_Code\flask\templates\analysis\twitter" />
+      <recent name="C:\Users\82105\Desktop\Data_Analysis\Python\Develop_Code\flask\templates\analysis\naver" />
+      <recent name="C:\Users\82105\Desktop\Data_Analysis\Python\Develop_Code\flask\templates\analysis\daum" />
+      <recent name="C:\Users\82105\Desktop\bigdata analysis\flask\facescore" />
+      <recent name="C:\Users\82105\Desktop\bigdata analysis\flask\model" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\82105\Desktop\Data_Analysis\Python\Develop_Code\flask" />
+      <recent name="C:\Users\82105\Desktop\Data_Analysis\Python\Develop_Code\flask\templates\admin" />
       <recent name="C:\Users\82105\Desktop\bigdata analysis\flask\templates" />
       <recent name="C:\Users\82105\Desktop\bigdata analysis\flask\templates\analysis\corona" />
       <recent name="C:\Users\82105\Desktop\bigdata analysis\flask\templates\analysis\twitter" />
-      <recent name="C:\Users\82105\Desktop\bigdata analysis\flask\templates\analysis\naver" />
-      <recent name="C:\Users\82105\Desktop\bigdata analysis\flask\templates\analysis\daum" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\82105\Desktop\bigdata analysis\flask\facescore" />
-      <recent name="C:\Users\82105\Desktop\bigdata analysis\flask\model" />
-      <recent name="C:\Users\82105\Desktop\bigdata analysis\flask\templates\analysis\twitter" />
-      <recent name="C:\Users\82105\Desktop\bigdata analysis\flask\templates\analysis\naver" />
-      <recent name="C:\Users\82105\Desktop\bigdata analysis\flask\templates\analysis\daum" />
     </key>
   </component>
   <component name="RunManager" selected="Python.app">
@@ -130,31 +142,35 @@
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="470" y="139" key="#app/0.0.1707.1027@0.0.1707.1027" timestamp="1592648869885" />
-    <state x="644" y="248" key="FileChooserDialogImpl" timestamp="1598762295596">
+    <state x="883" y="329" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1598969417993">
+      <screen x="0" y="0" width="1707" height="1027" />
+    </state>
+    <state x="883" y="329" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1707.1027@0.0.1707.1027" timestamp="1598969417993" />
+    <state x="644" y="248" key="FileChooserDialogImpl" timestamp="1598959112288">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="579" y="199" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1590477516821" />
-    <state x="644" y="248" key="FileChooserDialogImpl/0.0.1707.1027@0.0.1707.1027" timestamp="1598762295596" />
-    <state width="1685" height="341" key="GridCell.Tab.0.bottom" timestamp="1593006960232">
+    <state x="644" y="248" key="FileChooserDialogImpl/0.0.1707.1027@0.0.1707.1027" timestamp="1598959112288" />
+    <state width="1382" height="176" key="GridCell.Tab.0.bottom" timestamp="1598969984926">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state width="1364" height="195" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590488360803" />
-    <state width="1685" height="341" key="GridCell.Tab.0.bottom/0.0.1707.1027@0.0.1707.1027" timestamp="1593006960232" />
-    <state width="1685" height="341" key="GridCell.Tab.0.center" timestamp="1593006960232">
+    <state width="1382" height="176" key="GridCell.Tab.0.bottom/0.0.1707.1027@0.0.1707.1027" timestamp="1598969984926" />
+    <state width="1382" height="176" key="GridCell.Tab.0.center" timestamp="1598969984926">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state width="1364" height="195" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590488360803" />
-    <state width="1685" height="341" key="GridCell.Tab.0.center/0.0.1707.1027@0.0.1707.1027" timestamp="1593006960232" />
-    <state width="1685" height="341" key="GridCell.Tab.0.left" timestamp="1593006960232">
+    <state width="1382" height="176" key="GridCell.Tab.0.center/0.0.1707.1027@0.0.1707.1027" timestamp="1598969984926" />
+    <state width="1382" height="176" key="GridCell.Tab.0.left" timestamp="1598969984925">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state width="1364" height="195" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590488360803" />
-    <state width="1685" height="341" key="GridCell.Tab.0.left/0.0.1707.1027@0.0.1707.1027" timestamp="1593006960232" />
-    <state width="1685" height="341" key="GridCell.Tab.0.right" timestamp="1593006960232">
+    <state width="1382" height="176" key="GridCell.Tab.0.left/0.0.1707.1027@0.0.1707.1027" timestamp="1598969984925" />
+    <state width="1382" height="176" key="GridCell.Tab.0.right" timestamp="1598969984926">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state width="1364" height="195" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590488360803" />
-    <state width="1685" height="341" key="GridCell.Tab.0.right/0.0.1707.1027@0.0.1707.1027" timestamp="1593006960232" />
+    <state width="1382" height="176" key="GridCell.Tab.0.right/0.0.1707.1027@0.0.1707.1027" timestamp="1598969984926" />
     <state width="1685" height="341" key="GridCell.Tab.1.bottom" timestamp="1593006960232">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
@@ -171,10 +187,10 @@
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state width="1685" height="341" key="GridCell.Tab.1.right/0.0.1707.1027@0.0.1707.1027" timestamp="1593006960232" />
-    <state x="129" y="27" key="SettingsEditor" timestamp="1594035806833">
+    <state x="129" y="27" key="SettingsEditor" timestamp="1598959013455">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="116" y="22" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1590476453938" />
-    <state x="129" y="27" key="SettingsEditor/0.0.1707.1027@0.0.1707.1027" timestamp="1594035806833" />
+    <state x="129" y="27" key="SettingsEditor/0.0.1707.1027@0.0.1707.1027" timestamp="1598959013455" />
   </component>
 </project>

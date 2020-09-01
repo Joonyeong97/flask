@@ -1,15 +1,14 @@
-from flask import render_template, request, redirect, url_for
-from flask import Flask, abort, flash
+from flask import render_template, request
+from flask import Flask, abort
 from werkzeug.utils import secure_filename
 import titanic
 import img_load
 import sql
+import time
 import face_image
-import os
 import datetime
-import pandas as pd
-import numpy as np
-from flask_matomo import *
+from Crawling import Crawling
+from datetime import datetime, timedelta
 app = Flask(__name__)
 
 ###### TEST #######
@@ -17,7 +16,6 @@ app = Flask(__name__)
 ###### TEST #######
 @app.route('/admin', methods=['GET','POST'])
 def newtest():
-    import os
     if request.method == 'POST':
         PASS = request.form['PASS']
         if len(PASS) == 0:
@@ -35,9 +33,71 @@ def newtest():
         ip, date, wi = sql.admin(PASS,date1)
         return render_template('new_test/test1.html', ip=ip, date=date, wi=wi)
     return render_template('new_test/test1.html')
+
+
+
 ###### TEST #######
 ###### TEST #######
+
+@app.route('/Daum', methods=['GET'])
+def DAUM():
+    if request.method == 'GET':
+        day = 0
+        date = (datetime.now() + timedelta(days=day)).strftime('%Y%m%d')
+        return render_template('analysis/daum/DAUM.html',date=date)
+
+@app.route('/Naver', methods=['GET'])
+def NAVER():
+    if request.method == 'GET':
+        day = 0
+        date = (datetime.now() + timedelta(days=day)).strftime('%Y%m%d')
+        return render_template('analysis/naver/NAVER.html',date=date)
+
+@app.route('/Twitter', methods=['GET'])
+def TWITTER():
+    if request.method == 'GET':
+        day = 0
+        date = (datetime.now() + timedelta(days=day)).strftime('%Y%m%d')
+        search_n = sql.twi2(date)
+        return render_template('analysis/twitter/TWITTER.html',date=date, search_n=search_n)
+
 ###### TEST #######
+
+## 자동 크롤링
+@app.route('/crawl', methods=['GET','POST'])
+def crawl():
+    crawlPass = '1542AA'
+    if request.method == 'GET':
+        try:
+            return render_template("admin/crawl.html")
+        except:
+            abort(404, description="Resource not found")
+    if request.method == 'POST':
+        PASS = request.form['crawl']
+        scan_name = request.form['scan_name']
+        try:
+            if PASS != crawlPass:
+                crawls = '비밀번호 에러'
+                return render_template("admin/crawl.html", crawls=crawls)
+            elif PASS == crawlPass:
+
+                crwal = Crawling()
+                crwal.text(scan_name)
+                crwal.Daum()
+                time.sleep(2)
+                crwal.Naver()
+                time.sleep(2)
+                crwal.twitter()
+                sql.twi1(time.strftime('%Y%m%d', time.localtime(time.time())), scan_name)
+                crawls = '확인완료! 크롤링을 완료!!!'
+
+                return render_template("admin/crawl.html", crawls=crawls)
+            else:
+                pass
+        except:
+            abort(404, description="Resource not found")
+    return render_template("admin/crawl.html")
+
 
 # 업로드 HTML 렌더링
 @app.route('/catdog')
@@ -49,7 +109,6 @@ def render_file():
 @app.route('/catdog2', methods=['GET', 'POST'])
 def upload_file():
     import os
-    from flask import jsonify
     if request.method == 'POST':
         img_dir = os.path.join('static/customer_img/')
         f = request.files['file']
@@ -92,6 +151,7 @@ def name():
     return request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
     #return jsonify({'ip': request.remote_addr}), 200
     #return jsonify({'ip': request.environ['REMOTE_ADDR']}), 200
+
 # 문의글
 @app.route('/pop')
 def pop():
@@ -211,58 +271,40 @@ def index2():
         abort(404, description="Resource not found")
     return render_template("index.html", today=today, total=total)
 
-@app.route('/crawl', methods=['GET','POST'])
-def crawl():
-    if request.method == 'GET':
-        try:
-            return render_template("Testing/crawl.html")
-        except:
-            abort(404, description="Resource not found")
-    if request.method == 'POST':
-        PASS = request.form['crawl']
-        try:
-            if int(PASS) != 1542:
-                crawls = '비밀번호 에러'
-                return render_template("Testing/crawl.html", crawls=crawls)
-            elif int(PASS) == 1542:
-                crawls = '통과'
-                return render_template("Testing/crawl.html", crawls=crawls)
-            else:
-                pass
-        except:
-            abort(404, description="Resource not found")
-    return render_template("Testing/crawl.html")
 
-@app.route('/twitter02')
-def twitter02():
-    return render_template("analysis/twitter/twitter02.html")
-@app.route('/twitter03')
-def twitter03():
-    return render_template("analysis/twitter/twitter03.html")
+# @app.route('/twitter02')
+# def twitter02():
+#     return render_template("analysis/twitter/twitter02.html")
+# @app.route('/twitter03')
+# def twitter03():
+#     return render_template("analysis/twitter/twitter03.html")
+#
+#
+#
+# @app.route('/naver02')
+# def naver02():
+#     return render_template("analysis/naver/naver02.html")
+# @app.route('/naver03')
+# def naver03():
+#     return render_template("analysis/naver/naver03.html")
+#
+#
+#
+# @app.route('/daum02')
+# def daum02():
+#     return render_template("analysis/daum/daum02.html")
+# @app.route('/daum03')
+# def daum03():
+#     return render_template("analysis/daum/daum03.html")
 
 
-
-@app.route('/naver02')
-def naver02():
-    return render_template("analysis/naver/naver02.html")
-@app.route('/naver03')
-def naver03():
-    return render_template("analysis/naver/naver03.html")
-
-
-
-@app.route('/daum02')
-def daum02():
-    return render_template("analysis/daum/daum02.html")
-@app.route('/daum03')
-def daum03():
-    return render_template("analysis/daum/daum03.html")
-
+# if __name__ == '__main__':
+#     # app.run(host='127.0.0.1', port=80, debug=True)
+#     start = input('온라인은 y / 오프라인은 아무키나 : ')
+#     if start == 'y':
+#         app.run(host='0.0.0.0', port=80)
+#     else:
+#         app.run(host='127.0.0.1', port=80, debug = True)
 
 if __name__ == '__main__':
-    # app.run(host='127.0.0.1', port=80, debug=True)
-    start = input('온라인은 y / 오프라인은 아무키나 : ')
-    if start == 'y':
-        app.run(host='0.0.0.0', port=80)
-    else:
-        app.run(host='127.0.0.1', port=80, debug = True)
+    app.run(host='127.0.0.1', port=80, debug=True)
