@@ -11,7 +11,6 @@ import pandas as pd
 import numpy as np
 from flask_matomo import *
 app = Flask(__name__)
-matomo = Matomo(app, matomo_url="https://data-cook.matomo.cloud", id_site=1)
 
 ###### TEST #######
 ###### TEST #######
