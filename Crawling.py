@@ -188,6 +188,7 @@ class Crawling:
                 body.send_keys(Keys.PAGE_DOWN)
                 time.sleep(1)
             for ttt in text2:
+                print(ttt.text)
                 result.append(re.sub('\n', '', ttt.text))
         time.sleep(1)
         if self.platform == 'linux':

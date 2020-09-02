@@ -4,12 +4,6 @@
     <list default="true" id="01fe3210-8ff2-4e7c-9b6a-b1e731b527fb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Crawling.py" beforeDir="false" afterPath="$PROJECT_DIR$/Crawling.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/crawl_img/daum/daum_20200902.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/crawl_img/naver/naver_20200902.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/crawl_text/daum/다음뉴스종합_20200902.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/crawl_text/naver/네이버종합뉴스_20200902.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/crawl_text/twitter/twitter20200902.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
