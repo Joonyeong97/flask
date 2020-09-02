@@ -34,8 +34,8 @@ class Crawling:
             print('System platform : Linux')
             self.driver_path = './static/lib/webDriver/chromedriver_lnx'
             from pyvirtualdisplay import Display
-            display = Display(visible=0, size=(1920, 1080))
-            display.start()
+            self.display = Display(visible=0, size=(1920, 1080))
+            self.display.start()
 
         elif self.platform == 'win32':
             print('System platform : Window')
