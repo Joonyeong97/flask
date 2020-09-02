@@ -33,9 +33,6 @@ class Crawling:
         elif self.platform == 'linux':
             print('System platform : Linux')
             self.driver_path = './static/lib/webDriver/chromedriver_lnx'
-            from pyvirtualdisplay import Display
-            self.display = Display(visible=0, size=(1920, 1080))
-            self.display.start()
 
         elif self.platform == 'win32':
             print('System platform : Window')
@@ -116,6 +113,12 @@ class Crawling:
         import nltk
         keyword = self.scan_name
 
+        # if self.platform == 'linux':
+        #     print('System platform : Linux')
+        #     self.driver_path = './static/lib/webDriver/chromedriver_lnx'
+        #     from pyvirtualdisplay import Display
+        #     self.display = Display(visible=0, size=(800, 600))
+        #     self.display.start()
         # 웹 셋팅
         chrome = self.generate_chrome(
             driver_path=self.driver_path,
@@ -445,10 +448,35 @@ class Crawling:
 
         :return webdriver: 크롬 드라이버 인스턴스
         """
+        if self.platform == 'linux':
+            from pyvirtualdisplay import Display
+            from selenium.webdriver.chrome.options import Options
+
+            display = Display(visible=0, size=(1024, 768))
+            display.start()
+
+            self.options = Options()
+            self.ptions.binary_location = "/usr/bin/google-chrome"
+
+            # chrome_options = webdriver.ChromeOptions()
+            self.options.headless = True
+            self.options.add_argument('--headless')
+            self.options.add_argument('--no-sandbox')
+            self.options.add_argument('--disable-gpu')
+            self.options.add_argument('--disable-dev-shm-usage')
+
+            chrome = webdriver.Chrome(executable_path=driver_path, options=self.options)
+
+            if headless:
+                self._enable_download_in_headless_chrome(chrome, download_path)
+
+            atexit.register(self._close_chrome(chrome))  # 스크립트 종료전 무조건 크롬 종료
+
+            return chrome
 
         self.options = webdriver.ChromeOptions()
         if headless:
-            self.options.add_argument('headless')
+            self.options.add_argument('--headless')
             self.options.add_argument('--disable-gpu')
         self.options.add_experimental_option('prefs', {
             'download.default_directory': download_path,
