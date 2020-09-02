@@ -24,7 +24,7 @@ class Crawling:
         # GUI 창 설정 (True = GUI 안함, False = GUI)
         self.headless = True
         self.platform = sys.platform
-        
+
         # Font 설정
         if self.platform == 'linux':
             self.fontPath = 'static/lib/fonts/asi1.ttf'
@@ -50,12 +50,17 @@ class Crawling:
             raise Exception()
 
         # 저장을 원하는 경로 설정 / 현재 경로
-        self.img_save_path = os.getcwd()
+        if self.platform == 'linux':
+            self.img_save_path = os.getcwd()
+            self.output_path = os.path.join(self.img_save_path, 'static')
+            self.img_path = os.path.join(self.output_path, 'crawl_img')
+            self.text_path = os.path.join(self.output_path, 'crawl_text')
+        else:
+            self.img_save_path = os.getcwd()
+            self.output_path = os.path.join(self.img_save_path, 'static')
+            self.img_path = os.path.join(self.output_path, 'crawl_img')
+            self.text_path = os.path.join(self.output_path, 'crawl_text')
 
-        # 변경금지
-        self.output_path = os.path.join(self.img_save_path, 'static')
-        self.img_path = os.path.join(self.output_path, 'crawl_img')
-        self.text_path = os.path.join(self.output_path, 'crawl_text')
 
         if os.path.isdir(self.output_path):
             pass
@@ -107,6 +112,7 @@ class Crawling:
 
         url = 'https://trends.google.co.kr/trends/trendingsearches/daily?geo=KR'
         chrome.get(url)
+        print('크롬시작')
         chrome.implicitly_wait(30)
         text = chrome.find_elements_by_css_selector('#feed-item-NVIDIA > div.details-wrapper > div.details > div.details-top > div > span > a')
         word = text[0].text
