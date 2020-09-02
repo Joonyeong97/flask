@@ -207,7 +207,7 @@ class Crawling:
         for _, q in enumerate(tokens_ko):
             for i in range(len(q)):
                 final.insert(-1, q[i])
-
+        print('형태소분석 완료!')
         ko = nltk.Text(final, name="첫번째")
         data = ko.vocab().most_common(1000)
         date = time.strftime('%Y%m%d', time.localtime(time.time()))
@@ -432,9 +432,10 @@ class Crawling:
                 'link': http[i]
             }, index=[i]))
         text2 = files.Contents
+
         # 텍스트파일에 댓글 저장하기
         files.to_csv(text_save_path+'/다음뉴스종합_{}.csv'.format(date),index=False,encoding='utf-8')
-
+        print('다음 텍스트 저장완료!')
         from ckonlpy.tag import Twitter
 
         t = Twitter()
