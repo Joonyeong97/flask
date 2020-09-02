@@ -199,7 +199,6 @@ class Crawling:
 
         t.add_dictionary(self.sajun(), 'Noun')
         print('단어사전 추출완료')
-        print(self.sajun())
         tokens_ko = []
 
         for i in range(len(result)):
