@@ -13,6 +13,7 @@ from selenium.webdriver.common.keys import Keys
 from ckonlpy.tag import Twitter
 import sql
 from selenium.webdriver.chrome.options import Options
+from pyvirtualdisplay import Display
 
 class Crawling:
     def __init__(self):
@@ -78,7 +79,7 @@ class Crawling:
 
     def google_trend_first(self):
         if self.platform == 'linux':
-            from pyvirtualdisplay import Display
+
 
             display = Display(visible=0, size=(1024, 768))
             display.start()
@@ -143,7 +144,6 @@ class Crawling:
         #     self.display.start()
         # 웹 셋팅
         if self.platform == 'linux':
-            from pyvirtualdisplay import Display
 
             display = Display(visible=0, size=(1024, 768))
             display.start()
@@ -252,7 +252,6 @@ class Crawling:
 
         # 웹 셋팅
         if self.platform == 'linux':
-            from pyvirtualdisplay import Display
 
             display = Display(visible=0, size=(1024, 768))
             display.start()
