@@ -116,7 +116,7 @@ class Crawling:
         word = text[0].text
         word = word.split('\n')[1]
         chrome.close()
-        print('word')
+        print(word)
         return word
 
     def twitter(self):
