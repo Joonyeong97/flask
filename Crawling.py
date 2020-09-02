@@ -440,7 +440,7 @@ class Crawling:
 
         t = Twitter()
         t.add_dictionary(self.sajun(), 'Noun')
-
+        print('형태소 사전 업로드 완료!!')
         import nltk
         tokens_ko = []
 
