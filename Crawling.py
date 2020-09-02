@@ -459,7 +459,7 @@ class Crawling:
             display.start()
 
             self.options = Options()
-            self.ptions.binary_location = "/usr/bin/google-chrome"
+            self.options.binary_location = "/usr/bin/google-chrome"
 
             # chrome_options = webdriver.ChromeOptions()
             self.options.headless = True
