@@ -224,7 +224,7 @@ class Crawling:
         wordcloud = WordCloud(font_path=self.fontPath,
                               background_color='white', max_words=230).generate_from_frequencies(tmp_data)
         plt.figure(figsize=(10, 8))
-        #plt.imshow(wordcloud)
+        plt.imshow(wordcloud)
         plt.axis('off'), plt.xticks([]), plt.yticks([])
         plt.tight_layout()
         plt.subplots_adjust(left=0, bottom=0, right=1, top=1, hspace=0, wspace=0)
@@ -371,7 +371,7 @@ class Crawling:
         wordcloud = WordCloud(font_path=self.fontPath,
                               background_color='white', max_words=230).generate_from_frequencies(tmp_data)
         plt.figure(figsize=(10, 8))
-        #plt.imshow(wordcloud)
+        plt.imshow(wordcloud)
         plt.axis('off'), plt.xticks([]), plt.yticks([])
         plt.tight_layout()
         plt.subplots_adjust(left=0, bottom=0, right=1, top=1, hspace=0, wspace=0)
@@ -430,10 +430,10 @@ class Crawling:
                 'link': http[i]
             }, index=[i]))
         text2 = files.Contents
-
+        print('다음텍스트 저장')
         # 텍스트파일에 댓글 저장하기
         files.to_csv(text_save_path+'/다음뉴스종합_{}.csv'.format(date),index=False,encoding='utf-8')
-
+        print('다음텍스트 저장 성공!')
 
 
         from ckonlpy.tag import Twitter
@@ -470,7 +470,7 @@ class Crawling:
                               background_color='white', max_words=230).generate_from_frequencies(tmp_data)
         print('wordcloud 실행!!!')
         plt.figure(figsize=(10, 8))
-        # plt.imshow(wordcloud)
+        plt.imshow(wordcloud)
         plt.axis('off'), plt.xticks([]), plt.yticks([])
         plt.tight_layout()
         plt.subplots_adjust(left=0, bottom=0, right=1, top=1, hspace=0, wspace=0)
