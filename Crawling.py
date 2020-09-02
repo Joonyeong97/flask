@@ -14,6 +14,7 @@ from ckonlpy.tag import Twitter
 import sql
 from selenium.webdriver.chrome.options import Options
 from pyvirtualdisplay import Display
+import nltk
 
 class Crawling:
     def __init__(self):
@@ -436,12 +437,12 @@ class Crawling:
         # 텍스트파일에 댓글 저장하기
         files.to_csv(text_save_path+'/다음뉴스종합_{}.csv'.format(date),index=False,encoding='utf-8')
         print('다음 텍스트 저장완료!')
-        from ckonlpy.tag import Twitter
+
 
         t = Twitter()
         t.add_dictionary(self.sajun(), 'Noun')
         print('형태소 사전 업로드 완료!!')
-        import nltk
+
         tokens_ko = []
 
         for i in range(len(text2)):
