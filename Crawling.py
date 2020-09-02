@@ -32,7 +32,7 @@ class Crawling:
 
         elif self.platform == 'linux':
             print('System platform : Linux')
-            self.driver_path = './static/lib/webDriver/chromedriver_lnx'
+            self.driver_path = 'static/lib/webDriver/chromedriver_lnx'
 
         elif self.platform == 'win32':
             print('System platform : Window')
