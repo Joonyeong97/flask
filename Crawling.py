@@ -112,8 +112,9 @@ class Crawling:
         chrome.get(url)
         print('크롬시작')
         chrome.implicitly_wait(30)
-        text = chrome.find_elements_by_css_selector('#feed-item-NVIDIA > div.details-wrapper > div.details > div.details-top > div > span > a')
+        text = chrome.find_elements_by_css_selector('body > div.trends-wrapper > div:nth-child(2) > div > div.feed-content > div > div.generic-container-wrapper > ng-include > div > div > div > div:nth-child(1) > md-list.md-list-block.first-list-item')
         word = text[0].text
+        word = word.split('\n')[1]
         chrome.close()
         print('word')
         return word
