@@ -7,6 +7,30 @@ def sql_():
                            cursorclass=pymysql.cursors.DictCursor)
     return conn
 
+
+def word_dictionary():
+    conn = sql_()
+    cur = conn.cursor()
+    sql = """select word from word_dictionary"""
+    cur.execute(sql)
+    row = cur.fetchall()
+    # data = pd.DataFrame(row[0])
+    pet_val = []
+    for pet in row:
+        # print(list(pet.values()))
+        pet_val.append(list(pet.values())[0])
+
+    conn.close()
+    return pet_val
+
+def word_input(word):
+    conn = sql_()
+    cur = conn.cursor()
+    sql = """insert into word_dictionary(word) values(%s)"""
+    cur.execute(sql, ('%s'%(word)))
+    conn.commit()
+    conn.close()
+
 def twi1(date,search_n):
     conn = sql_()
     cur = conn.cursor()

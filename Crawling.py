@@ -10,18 +10,19 @@ import re
 import atexit
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-from tqdm import tqdm
 from ckonlpy.tag import Twitter
+import sql
 
 class Crawling:
     def __init__(self):
         self.PROJECT_DIR = ''
-        print(self.PROJECT_DIR)
         self.DOWNLOAD_DIR = os.path.join(self.PROJECT_DIR, 'download')
         #self.driver_path = os.path.join(self.PROJECT_DIR, 'lib/webDriver')
 
         # GUI 창 설정 (True = GUI 안함, False = GUI)
         self.headless = True
+        # Font 설정
+        self.fontPath = './static/lib/fonts/asi1.ttf'
 
         # OS 확인
         self.platform = sys.platform
@@ -35,9 +36,7 @@ class Crawling:
 
         elif self.platform == 'win32':
             print('System platform : Window')
-            #self.driver_path = os.path.join(self.driver_path, 'chromedriver_win.exe')
             self.driver_path = './static/lib/webDriver/chromedriver_win.exe'
-            print(self.driver_path)
 
         else:
             print(f'[{sys.platform}] 지원하지 않는 운영체제입니다. 확인 바랍니다.')
@@ -63,33 +62,31 @@ class Crawling:
         self.scan_name = scan_name
 
 
-    # 단어사전을 추가해야함. / 워드클라우드 사용시 사용됩니다.
+    # 단어사전
     def sajun(self):
-        sajun = ['트와이스', 'kf94', 'KF94', 'Kf94', 'kF94', '타임라인', '확진자', '예방수칙', '코로나19', 'corona19', 'Corona19',
-                 '개소리', '판매', '제품', '쿠팡', 'kf94마스크', 'KF94마스크', 'Kf94마스크', 'kF94마스크',
-                 '우한폐렴', '신종코로나', '신종코로나바이러스', 'coronavirus', 'Coronavirus', '사재기',
-                 '복지부장관', '바이러스', '피해복구', '이만희', '문재인', '이재갑', '한림대',
-                 '감염내과', '교수님', '정치인', '입국금지', '대변인', '청와대', '문대통령', '황기자', '신천지', '근로장려금',
-                 '까페', '배달', '페미', '항체', '에휴', '미래통합당', '자유한국당', '민주통합당', '3사',
-                 '이동통신', '갤럭시', '갤럭시S20', '감염병', '난리', '순방', '신천지', '신천지사이트', '쿠팡',
-                 '쿠팡플렉스', 'coupang flex', '배급제', '1인2매', '마스크', '이덴트', '수출길', '마스크5부제',
-                 '신천지연예인명단', '신천지연예인', '세계여성의날', '식약처', '양금희', '시진핑', '주석',
-                 '보건당국', '구로콜센터', '실거래', '공적마스크', 'WHO', '사무총장', '큐넷', '팬데믹', '펜대믹', '팬대믹',
-                 'pandemic', 'Pandemic', '1800선', '코스피', '코스피하락', '최악', '급락', '트럼프', 'cospi', 'cosdac', '사이드카',
-                 '망했다', '10년전', 'IMF', '거품', '금융버블', '금융위기', '붕괴', '순매수', '순매도', '공매도', '공매도금지법',
-                 '금융위원회', '한국거래소', '주지훈', '하이에나', '은혜의강교회', '사이비종교', '집단감염', '신도', '카톡', '카톡에러',
-                 '개학연기', '신형아반떼', '현대자동차', '아반떼', 'Avante', '1500선붕괴', '1400선', 'n번방', 'n번방사건', '텔레그램',
-                 '소신발언', '벗방', '그것이알고싶다', '카르텔', '사이버성폭력', '강력처벌', 'BJ', '그알', '셀트리온', '코로나항체', '항체개발',
-                 '7월내', '조주빈', 'N번방박사', '한타바이러스', '중국바이러스', '설치류', '중국', '초중고', 'EBS특강', 'EBS', '온라인강의',
-                 '포털서비스', '네이버', '카카오', '라이브특강', '라이브특강', '접속자폭주', '피파온라인4', '상반기', '로스터업데이트',
-                 '넥슨', '후베이성', '우한폭동', '봉쇄풀린', '두달만에', '손석희', 'JTBC', '삼성', '긴급재난지원금', '복지로',
-                 '중산층', '소득분위', '70%', '150%', '중위소득', '재난지원금']
+        sajun = sql.word_dictionary()
         return sajun
 
     def cleanText(self,readData):
         # 텍스트에 포함되어 있는 특수 문자 제거
         text = re.sub('[-=+,#/\?:^$.@*\"※~&%ㆍ!』\\‘|\(\)\[\]\<\>`\'…》\n_·李永钦▶]', '', readData)
         return text
+
+    def google_trend_first(self):
+        chrome = self.generate_chrome(
+            driver_path=self.driver_path,
+            headless=self.headless,
+            download_path=self.DOWNLOAD_DIR)
+
+        # 웹접속
+
+        url = 'https://trends.google.co.kr/trends/trendingsearches/daily?geo=KR'
+        chrome.get(url)
+        chrome.implicitly_wait(30)
+        text = chrome.find_elements_by_css_selector('#feed-item-NVIDIA > div.details-wrapper > div.details > div.details-top > div > span > a')
+        word = text[0].text
+        chrome.close()
+        return word
 
     def twitter(self):
         cr_name = 'twitter'
@@ -132,15 +129,14 @@ class Crawling:
         time.sleep(3)
 
         body = chrome.find_element_by_css_selector('body')
-        text2 = chrome.find_elements_by_css_selector(
-            '#react-root > div > div > div.css-1dbjc4n.r-18u37iz.r-13qz1uu.r-417010 > main > div > div > div > div > div > div:nth-child(2) > div > div > section > div')
+        text2 = chrome.find_elements_by_css_selector('#react-root > div > div > div.css-1dbjc4n.r-18u37iz.r-13qz1uu.r-417010 > main > div > div > div > div > div > div:nth-child(2) > div > div > section > div')
         result = []
 
         for i in range(10):
             for q in range(3):
                 body.send_keys(Keys.PAGE_DOWN)
                 time.sleep(1)
-            for ttt in tqdm(text2):
+            for ttt in text2:
                 result.append(re.sub('\n', '', ttt.text))
 
         t = Twitter()
@@ -170,7 +166,7 @@ class Crawling:
 
         tmp_data = dict(data)
 
-        wordcloud = WordCloud(font_path='/Library/Fonts/NanumMyeongjo.ttf',
+        wordcloud = WordCloud(font_path=self.fontPath,
                               background_color='white', max_words=230).generate_from_frequencies(tmp_data)
         plt.figure(figsize=(10, 8))
         plt.imshow(wordcloud)
@@ -213,17 +209,6 @@ class Crawling:
             driver_path=self.driver_path,
             headless=self.headless,
             download_path=self.DOWNLOAD_DIR)
-
-        # options = webdriver.ChromeOptions()
-        #
-        # options.add_argument('headless')
-        # options.add_argument('--disable-gpu')
-        # options.add_experimental_option('prefs', {
-        #     'download.default_directory': self.DOWNLOAD_DIR,
-        #     'download.prompt_for_download': False,
-        # })
-
-        # chrome = webdriver.Chrome(executable_path='./chromedriver_win.exe', options=options)
 
         # 웹접속 - 네이버 이미지 접속
         print("Naver 접속중")
@@ -308,7 +293,7 @@ class Crawling:
 
         tmp_data = dict(data_1)
 
-        wordcloud = WordCloud(font_path='/Library/Fonts/NanumMyeongjo.ttf',
+        wordcloud = WordCloud(font_path=self.fontPath,
                               background_color='white', max_words=230).generate_from_frequencies(tmp_data)
         plt.figure(figsize=(10, 8))
         plt.imshow(wordcloud)
@@ -406,7 +391,7 @@ class Crawling:
 
         tmp_data = dict(data_1)
 
-        wordcloud = WordCloud(font_path='/Library/Fonts/NanumMyeongjo.ttf',
+        wordcloud = WordCloud(font_path=self.fontPath,
                               background_color='white', max_words=230).generate_from_frequencies(tmp_data)
         plt.figure(figsize=(10, 8))
         plt.imshow(wordcloud)

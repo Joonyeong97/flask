@@ -42,21 +42,21 @@ def newtest():
 @app.route('/Daum', methods=['GET'])
 def DAUM():
     if request.method == 'GET':
-        day = 0
+        day = -1
         date = (datetime.now() + timedelta(days=day)).strftime('%Y%m%d')
         return render_template('analysis/daum/DAUM.html',date=date)
 
 @app.route('/Naver', methods=['GET'])
 def NAVER():
     if request.method == 'GET':
-        day = 0
+        day = -1
         date = (datetime.now() + timedelta(days=day)).strftime('%Y%m%d')
         return render_template('analysis/naver/NAVER.html',date=date)
 
 @app.route('/Twitter', methods=['GET'])
 def TWITTER():
     if request.method == 'GET':
-        day = 0
+        day = -1
         date = (datetime.now() + timedelta(days=day)).strftime('%Y%m%d')
         search_n = sql.twi2(date)
         return render_template('analysis/twitter/TWITTER.html',date=date, search_n=search_n)
@@ -74,20 +74,33 @@ def crawl():
             abort(404, description="Resource not found")
     if request.method == 'POST':
         PASS = request.form['crawl']
-        scan_name = request.form['scan_name']
+
         try:
             if PASS != crawlPass:
                 crawls = '비밀번호 에러'
                 return render_template("admin/crawl.html", crawls=crawls)
             elif PASS == crawlPass:
+                # 크롤링시작
+                crwals = Crawling()
+                # 구글트렌드 1위 검색어 가져오기
+                scan_name = crwals.google_trend_first()
+                time.sleep(2)
+                # 단어사전 추가
+                sql.word_input(scan_name)
 
-                crwal = Crawling()
-                crwal.text(scan_name)
-                crwal.Daum()
+                # 다음 크롤링
+                crwals.Daum()
                 time.sleep(2)
-                crwal.Naver()
+
+                # 네이버 크롤링
+                crwals.Naver()
                 time.sleep(2)
-                crwal.twitter()
+
+                # 트위터 크롤링
+                crwals.text(scan_name)
+                crwals.twitter()
+
+                # 트위터 검색어 저장
                 sql.twi1(time.strftime('%Y%m%d', time.localtime(time.time())), scan_name)
                 crawls = '확인완료! 크롤링을 완료!!!'
 
@@ -298,13 +311,13 @@ def index2():
 #     return render_template("analysis/daum/daum03.html")
 
 
-# if __name__ == '__main__':
-#     # app.run(host='127.0.0.1', port=80, debug=True)
-#     start = input('온라인은 y / 오프라인은 아무키나 : ')
-#     if start == 'y':
-#         app.run(host='0.0.0.0', port=80)
-#     else:
-#         app.run(host='127.0.0.1', port=80, debug = True)
-
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=80, debug=True)
+    # app.run(host='127.0.0.1', port=80, debug=True)
+    start = input('온라인은 y / 오프라인은 아무키나 : ')
+    if start == 'y':
+        app.run(host='0.0.0.0', port=80)
+    else:
+        app.run(host='127.0.0.1', port=80, debug = True)
+
+# if __name__ == '__main__':
+#     app.run(host='127.0.0.1', port=80, debug=True)
