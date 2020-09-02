@@ -12,6 +12,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from ckonlpy.tag import Twitter
 import sql
+from selenium.webdriver.chrome.options import Options
 
 class Crawling:
     def __init__(self):
@@ -453,22 +454,21 @@ class Crawling:
         """
         if self.platform == 'linux':
             from pyvirtualdisplay import Display
-            from selenium.webdriver.chrome.options import Options
 
             display = Display(visible=0, size=(1024, 768))
             display.start()
 
-            self.options = Options()
-            self.options.binary_location = "/usr/bin/google-chrome"
+            options = Options()
+            options.binary_location = "/usr/bin/google-chrome"
 
             # chrome_options = webdriver.ChromeOptions()
-            self.options.headless = True
-            self.options.add_argument('--headless')
-            self.options.add_argument('--no-sandbox')
-            self.options.add_argument('--disable-gpu')
-            self.options.add_argument('--disable-dev-shm-usage')
+            options.headless = True
+            options.add_argument('--headless')
+            options.add_argument('--no-sandbox')
+            options.add_argument('--disable-gpu')
+            options.add_argument('--disable-dev-shm-usage')
 
-            chrome = webdriver.Chrome(executable_path=driver_path, options=self.options)
+            chrome = webdriver.Chrome(executable_path=driver_path, options=options)
 
             if headless:
                 self._enable_download_in_headless_chrome(chrome, download_path)
