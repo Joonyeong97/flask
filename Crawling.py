@@ -116,7 +116,6 @@ class Crawling:
         word = text[0].text
         word = word.split('\n')[1]
         chrome.close()
-        print(word)
         return word
 
     def twitter(self):
@@ -225,7 +224,7 @@ class Crawling:
         wordcloud = WordCloud(font_path=self.fontPath,
                               background_color='white', max_words=230).generate_from_frequencies(tmp_data)
         plt.figure(figsize=(10, 8))
-        plt.imshow(wordcloud)
+        #plt.imshow(wordcloud)
         plt.axis('off'), plt.xticks([]), plt.yticks([])
         plt.tight_layout()
         plt.subplots_adjust(left=0, bottom=0, right=1, top=1, hspace=0, wspace=0)
@@ -372,7 +371,7 @@ class Crawling:
         wordcloud = WordCloud(font_path=self.fontPath,
                               background_color='white', max_words=230).generate_from_frequencies(tmp_data)
         plt.figure(figsize=(10, 8))
-        plt.imshow(wordcloud)
+        #plt.imshow(wordcloud)
         plt.axis('off'), plt.xticks([]), plt.yticks([])
         plt.tight_layout()
         plt.subplots_adjust(left=0, bottom=0, right=1, top=1, hspace=0, wspace=0)
@@ -466,11 +465,12 @@ class Crawling:
 
 
         tmp_data = dict(data_1)
-
+        print('wordcloud 실행')
         wordcloud = WordCloud(font_path=self.fontPath,
                               background_color='white', max_words=230).generate_from_frequencies(tmp_data)
+        print('wordcloud 실행!!!')
         plt.figure(figsize=(10, 8))
-        plt.imshow(wordcloud)
+        # plt.imshow(wordcloud)
         plt.axis('off'), plt.xticks([]), plt.yticks([])
         plt.tight_layout()
         plt.subplots_adjust(left=0, bottom=0, right=1, top=1, hspace=0, wspace=0)
