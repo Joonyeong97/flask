@@ -22,7 +22,10 @@ class Crawling:
         # GUI 창 설정 (True = GUI 안함, False = GUI)
         self.headless = True
         # Font 설정
-        self.fontPath = './static/lib/fonts/asi1.ttf'
+        if self.platform == 'linux':
+            self.fontPath = 'static/lib/fonts/asi1.ttf'
+        else:
+            self.fontPath = './static/lib/fonts/asi1.ttf'
 
         # OS 확인
         self.platform = sys.platform
@@ -32,7 +35,7 @@ class Crawling:
 
         elif self.platform == 'linux':
             print('System platform : Linux')
-            self.driver_path = 'static/lib/webDriver/chromedriver_lnx'
+            self.driver_path = 'static/lib/webDriver/chromedriver_linux'
 
         elif self.platform == 'win32':
             print('System platform : Window')
