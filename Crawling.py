@@ -139,9 +139,6 @@ class Crawling:
         else:
             os.mkdir(self.text_path)
             os.mkdir(text_save_path)
-
-        import time
-        import nltk
         keyword = self.scan_name
 
         # if self.platform == 'linux':
