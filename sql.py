@@ -19,7 +19,7 @@ def word_dictionary():
     for pet in row:
         # print(list(pet.values()))
         pet_val.append(list(pet.values())[0])
-
+    print('단어사전 추출완료')
     conn.close()
     return pet_val
 

@@ -195,8 +195,10 @@ class Crawling:
         if self.platform == 'linux':
             chrome.close()
         t = Twitter()
-        t.add_dictionary(self.sajun(), 'Noun')
 
+        t.add_dictionary(self.sajun(), 'Noun')
+        print('단어사전 추출완료')
+        print(self.sajun())
         tokens_ko = []
 
         for i in range(len(result)):
@@ -430,11 +432,8 @@ class Crawling:
                 'link': http[i]
             }, index=[i]))
         text2 = files.Contents
-        print('다음텍스트 저장')
         # 텍스트파일에 댓글 저장하기
         files.to_csv(text_save_path+'/다음뉴스종합_{}.csv'.format(date),index=False,encoding='utf-8')
-        print('다음텍스트 저장 성공!')
-
 
         from ckonlpy.tag import Twitter
 
@@ -454,7 +453,7 @@ class Crawling:
 
         ko = nltk.Text(final, name="첫번째")
         data = ko.vocab().most_common(1000)
-
+        print('nltk 완료')
 
         # 다음뉴스는 50페이지 긁어오는거라서 1글자는 삭제했음. 필요한건 바로바로 보고서 사전에 추가해서 태깅 다시해야함.
         data_1 = []
