@@ -192,7 +192,7 @@ class Crawling:
                 time.sleep(1)
             for ttt in text2:
                 result.append(re.sub('\n', '', ttt.text))
-
+        time.sleep(1)
         if self.platform == 'linux':
             chrome.close()
         t = Twitter()

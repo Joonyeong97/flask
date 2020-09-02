@@ -82,27 +82,34 @@ def crawl():
             elif PASS == crawlPass:
                 # 크롤링시작
                 crwals = Crawling()
+
+
                 # 구글트렌드 1위 검색어 가져오기
                 scan_name = crwals.google_trend_first()
                 time.sleep(2)
-                # 단어사전 추가
-                sql.word_input(scan_name)
-
-                # 다음 크롤링
-                crwals.Daum()
-                time.sleep(2)
-
-                # 네이버 크롤링
-                crwals.Naver()
-                time.sleep(2)
-
+                # test
                 # 트위터 크롤링
                 crwals.text(scan_name)
                 crwals.twitter()
-
-                # 트위터 검색어 저장
-                sql.twi1(time.strftime('%Y%m%d', time.localtime(time.time())), scan_name)
                 crawls = '확인완료! 크롤링을 완료!!!'
+                # # 단어사전 추가
+                # sql.word_input(scan_name)
+                #
+                # # 다음 크롤링
+                # crwals.Daum()
+                # time.sleep(2)
+                #
+                # # 네이버 크롤링
+                # crwals.Naver()
+                # time.sleep(2)
+                #
+                # # 트위터 크롤링
+                # crwals.text(scan_name)
+                # crwals.twitter()
+                #
+                # # 트위터 검색어 저장
+                # sql.twi1(time.strftime('%Y%m%d', time.localtime(time.time())), scan_name)
+                # crawls = '확인완료! 크롤링을 완료!!!'
 
                 return render_template("admin/crawl.html", crawls=crawls)
             else:
