@@ -77,10 +77,13 @@ class Crawling:
         return text
 
     def google_trend_first(self):
-        chrome = self.generate_chrome(
-            driver_path=self.driver_path,
-            headless=self.headless,
-            download_path=self.DOWNLOAD_DIR)
+        if self.platform == 'linux':
+            chrome = self.linux_chrome()
+        else:
+            chrome = self.generate_chrome(
+                driver_path=self.driver_path,
+                headless=self.headless,
+                download_path=self.DOWNLOAD_DIR)
 
         # 웹접속
 
@@ -124,10 +127,13 @@ class Crawling:
         #     self.display = Display(visible=0, size=(800, 600))
         #     self.display.start()
         # 웹 셋팅
-        chrome = self.generate_chrome(
-            driver_path=self.driver_path,
-            headless=self.headless,
-            download_path=self.DOWNLOAD_DIR)
+        if self.platform == 'linux':
+            chrome = self.linux_chrome()
+        else:
+            chrome = self.generate_chrome(
+                driver_path=self.driver_path,
+                headless=self.headless,
+                download_path=self.DOWNLOAD_DIR)
 
         # 웹접속 - 네이버 이미지 접속
         print("Twitter 접속중")
@@ -215,10 +221,13 @@ class Crawling:
         res = []
 
         # 웹 셋팅
-        chrome = self.generate_chrome(
-            driver_path=self.driver_path,
-            headless=self.headless,
-            download_path=self.DOWNLOAD_DIR)
+        if self.platform == 'linux':
+            chrome = self.linux_chrome()
+        else:
+            chrome = self.generate_chrome(
+                driver_path=self.driver_path,
+                headless=self.headless,
+                download_path=self.DOWNLOAD_DIR)
 
         # 웹접속 - 네이버 이미지 접속
         print("Naver 접속중")
@@ -438,6 +447,26 @@ class Crawling:
 
         return close
 
+    def linux_chrome(self):
+        from pyvirtualdisplay import Display
+
+        display = Display(visible=0, size=(1024, 768))
+        display.start()
+
+        options = Options()
+        options.binary_location = "/usr/bin/google-chrome"
+
+        # chrome_options = webdriver.ChromeOptions()
+        options.headless = True
+        options.add_argument('--headless')
+        options.add_argument('--no-sandbox')
+        options.add_argument('--disable-gpu')
+        options.add_argument('--disable-dev-shm-usage')
+
+        chrome = webdriver.Chrome(executable_path=self.driver_path, options=options)
+
+        return chrome
+
     def generate_chrome(self,
             driver_path: str,
             download_path: str,
@@ -452,30 +481,30 @@ class Crawling:
 
         :return webdriver: 크롬 드라이버 인스턴스
         """
-        if self.platform == 'linux':
-            from pyvirtualdisplay import Display
-
-            display = Display(visible=0, size=(1024, 768))
-            display.start()
-
-            options = Options()
-            options.binary_location = "/usr/bin/google-chrome"
-
-            # chrome_options = webdriver.ChromeOptions()
-            options.headless = True
-            options.add_argument('--headless')
-            options.add_argument('--no-sandbox')
-            options.add_argument('--disable-gpu')
-            options.add_argument('--disable-dev-shm-usage')
-
-            chrome = webdriver.Chrome(executable_path=driver_path, options=options)
-
-            if headless:
-                self._enable_download_in_headless_chrome(chrome, download_path)
-
-            atexit.register(self._close_chrome(chrome))  # 스크립트 종료전 무조건 크롬 종료
-
-            return chrome
+        # if self.platform == 'linux':
+        #     from pyvirtualdisplay import Display
+        #
+        #     display = Display(visible=0, size=(1024, 768))
+        #     display.start()
+        #
+        #     options = Options()
+        #     options.binary_location = "/usr/bin/google-chrome"
+        #
+        #     # chrome_options = webdriver.ChromeOptions()
+        #     options.headless = True
+        #     options.add_argument('--headless')
+        #     options.add_argument('--no-sandbox')
+        #     options.add_argument('--disable-gpu')
+        #     options.add_argument('--disable-dev-shm-usage')
+        #
+        #     chrome = webdriver.Chrome(executable_path=driver_path, options=options)
+        #
+        #     if headless:
+        #         self._enable_download_in_headless_chrome(chrome, download_path)
+        #
+        #     atexit.register(self._close_chrome(chrome))  # 스크립트 종료전 무조건 크롬 종료
+        #
+        #     return chrome
 
         self.options = webdriver.ChromeOptions()
         if headless:
