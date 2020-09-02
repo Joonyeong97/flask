@@ -78,7 +78,22 @@ class Crawling:
 
     def google_trend_first(self):
         if self.platform == 'linux':
-            chrome = self.linux_chrome()
+            from pyvirtualdisplay import Display
+
+            display = Display(visible=0, size=(1024, 768))
+            display.start()
+
+            options = Options()
+            options.binary_location = "/usr/bin/google-chrome"
+
+            # chrome_options = webdriver.ChromeOptions()
+            options.headless = True
+            options.add_argument('--headless')
+            options.add_argument('--no-sandbox')
+            options.add_argument('--disable-gpu')
+            options.add_argument('--disable-dev-shm-usage')
+
+            chrome = webdriver.Chrome(executable_path=self.driver_path, options=options)
         else:
             chrome = self.generate_chrome(
                 driver_path=self.driver_path,
@@ -128,7 +143,22 @@ class Crawling:
         #     self.display.start()
         # 웹 셋팅
         if self.platform == 'linux':
-            chrome = self.linux_chrome()
+            from pyvirtualdisplay import Display
+
+            display = Display(visible=0, size=(1024, 768))
+            display.start()
+
+            options = Options()
+            options.binary_location = "/usr/bin/google-chrome"
+
+            # chrome_options = webdriver.ChromeOptions()
+            options.headless = True
+            options.add_argument('--headless')
+            options.add_argument('--no-sandbox')
+            options.add_argument('--disable-gpu')
+            options.add_argument('--disable-dev-shm-usage')
+
+            chrome = webdriver.Chrome(executable_path=self.driver_path, options=options)
         else:
             chrome = self.generate_chrome(
                 driver_path=self.driver_path,
@@ -222,7 +252,22 @@ class Crawling:
 
         # 웹 셋팅
         if self.platform == 'linux':
-            chrome = self.linux_chrome()
+            from pyvirtualdisplay import Display
+
+            display = Display(visible=0, size=(1024, 768))
+            display.start()
+
+            options = Options()
+            options.binary_location = "/usr/bin/google-chrome"
+
+            # chrome_options = webdriver.ChromeOptions()
+            options.headless = True
+            options.add_argument('--headless')
+            options.add_argument('--no-sandbox')
+            options.add_argument('--disable-gpu')
+            options.add_argument('--disable-dev-shm-usage')
+
+            chrome = webdriver.Chrome(executable_path=self.driver_path, options=options)
         else:
             chrome = self.generate_chrome(
                 driver_path=self.driver_path,
