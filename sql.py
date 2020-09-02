@@ -1,7 +1,7 @@
 
 def sql_():
     import pymysql
-    conn = pymysql.connect(host='13.124.226.221',
+    conn = pymysql.connect(host='15.165.204.24',
                            user='ljkk1542', port=8056, password='maroon3169!@', db='tell119',
                            charset='utf8mb4', use_unicode=True,
                            cursorclass=pymysql.cursors.DictCursor)
@@ -19,7 +19,6 @@ def word_dictionary():
     for pet in row:
         # print(list(pet.values()))
         pet_val.append(list(pet.values())[0])
-    print('단어사전 추출완료')
     conn.close()
     return pet_val
 
