@@ -86,8 +86,6 @@ class Crawling:
 
     def google_trend_first(self):
         if self.platform == 'linux':
-
-
             display = Display(visible=0, size=(1024, 768))
             display.start()
 
@@ -117,6 +115,7 @@ class Crawling:
         text = chrome.find_elements_by_css_selector('#feed-item-NVIDIA > div.details-wrapper > div.details > div.details-top > div > span > a')
         word = text[0].text
         chrome.close()
+        print('word')
         return word
 
     def twitter(self):
@@ -193,6 +192,8 @@ class Crawling:
             for ttt in text2:
                 result.append(re.sub('\n', '', ttt.text))
 
+        if self.platform == 'linux':
+            chrome.close()
         t = Twitter()
         t.add_dictionary(self.sajun(), 'Noun')
 
@@ -311,6 +312,9 @@ class Crawling:
                 https.append(http[idx])
 
         files = pd.DataFrame()
+
+        if self.platform == 'linux':
+            chrome.close()
 
         for i in range(len(https)):
             res = requests.get(https[i])
