@@ -131,3 +131,87 @@ Naver 접속중
 220.124.206.245 - - [03/Sep/2020 10:09:26] "[37mGET /img/favicon.ico HTTP/1.1[0m" 200 -
 220.124.206.245 - - [03/Sep/2020 10:09:28] "[37mGET /Daum HTTP/1.1[0m" 200 -
 220.124.206.245 - - [03/Sep/2020 10:09:28] "[37mGET /img/favicon.ico HTTP/1.1[0m" 200 -
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+220.124.206.245 - - [03/Sep/2020 10:15:36] "[37mGET /Daum HTTP/1.1[0m" 200 -
+220.124.206.245 - - [03/Sep/2020 10:15:37] "[37mGET /img/favicon.ico HTTP/1.1[0m" 200 -
+220.124.206.245 - - [03/Sep/2020 10:15:41] "[37mGET /deepleaning HTTP/1.1[0m" 200 -
+220.124.206.245 - - [03/Sep/2020 10:15:41] "[37mGET /img/favicon.ico HTTP/1.1[0m" 200 -
+220.124.206.245 - - [03/Sep/2020 10:15:42] "[37mGET /catdog HTTP/1.1[0m" 200 -
+220.124.206.245 - - [03/Sep/2020 10:15:43] "[37mGET /img/favicon.ico HTTP/1.1[0m" 200 -
+Using TensorFlow backend.
+/home/ubuntu/.local/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:516: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/home/ubuntu/.local/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:517: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/home/ubuntu/.local/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:518: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/home/ubuntu/.local/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:519: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/home/ubuntu/.local/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:520: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/home/ubuntu/.local/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:525: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+/home/ubuntu/.local/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:541: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/home/ubuntu/.local/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:542: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/home/ubuntu/.local/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:543: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/home/ubuntu/.local/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:544: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/home/ubuntu/.local/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:545: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/home/ubuntu/.local/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:550: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/keras/backend/tensorflow_backend.py:4070: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+2020-09-03 10:15:51.351373: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2020-09-03 10:15:51.396823: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2300080000 Hz
+2020-09-03 10:15:51.396956: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7f952e3b6c80 executing computations on platform Host. Devices:
+2020-09-03 10:15:51.396974: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): <undefined>, <undefined>
+2020-09-03 10:15:51.465851: W tensorflow/compiler/jit/mark_for_compilation_pass.cc:1412] (One-time warning): Not using XLA:CPU for cluster because envvar TF_XLA_FLAGS=--tf_xla_cpu_global_jit was not set.  If you want XLA:CPU, either set that envvar, or use experimental_jit_scope to enable XLA:CPU.  To confirm that XLA is active, pass --vmodule=xla_compilation_cache=1 (as a proper command-line flag, not via TF_XLA_FLAGS) or set the envvar XLA_FLAGS=--xla_hlo_profile.
+WARNING:tensorflow:From /home/ubuntu/.local/lib/python3.6/site-packages/tensorflow/python/ops/nn_impl.py:180: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/keras/backend/tensorflow_backend.py:422: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+
+220.124.206.245 - - [03/Sep/2020 10:15:52] "[37mPOST /catdog2 HTTP/1.1[0m" 200 -
+220.124.206.245 - - [03/Sep/2020 10:15:52] "[37mGET /img/favicon.ico HTTP/1.1[0m" 200 -
+220.124.206.245 - - [03/Sep/2020 10:15:54] "[37mGET /index HTTP/1.1[0m" 200 -
+220.124.206.245 - - [03/Sep/2020 10:15:54] "[37mGET /img/favicon.ico HTTP/1.1[0m" 200 -
+220.124.206.245 - - [03/Sep/2020 10:16:08] "[37mGET /index HTTP/1.1[0m" 200 -
+220.124.206.245 - - [03/Sep/2020 10:16:09] "[37mGET /img/favicon.ico HTTP/1.1[0m" 200 -
+220.94.225.94 - - [03/Sep/2020 10:26:23] "[37mGET /index.gif HTTP/1.1[0m" 200 -
+211.180.37.251 - - [03/Sep/2020 10:38:31] "[37mGET /index.gif HTTP/1.1[0m" 200 -
+39.115.83.204 - - [03/Sep/2020 10:40:22] "[37mGET /index.gif HTTP/1.1[0m" 200 -
+138.68.241.223 - - [03/Sep/2020 10:42:26] "[37mGET /.env HTTP/1.1[0m" 200 -
+138.68.241.223 - - [03/Sep/2020 10:42:26] "[31m[1mPOST / HTTP/1.1[0m" 405 -
+167.248.133.34 - - [03/Sep/2020 10:48:24] "[37mGET / HTTP/1.1[0m" 200 -
+167.248.133.34 - - [03/Sep/2020 10:48:24] "[37mGET / HTTP/1.1[0m" 200 -
+194.147.115.146 - - [03/Sep/2020 11:18:05] "[37mPOST /boaform/admin/formLogin HTTP/1.1[0m" 200 -
+103.152.43.118 - - [03/Sep/2020 11:29:53] "[37mPOST /xmlrpc.php HTTP/1.1[0m" 200 -
+103.152.43.118 - - [03/Sep/2020 11:29:54] "[37mPOST /wordpress/xmlrpc.php HTTP/1.1[0m" 200 -
+103.152.43.118 - - [03/Sep/2020 11:29:56] "[37mPOST /blog/xmlrpc.php HTTP/1.1[0m" 200 -
+103.152.43.118 - - [03/Sep/2020 11:29:58] "[37mGET /phpMyAdmin/index.php HTTP/1.1[0m" 200 -
+103.152.43.118 - - [03/Sep/2020 11:29:59] "[37mGET /pma/index.php HTTP/1.1[0m" 200 -
+103.152.43.118 - - [03/Sep/2020 11:30:02] "[37mGET /phpmyadmin/index.php HTTP/1.1[0m" 200 -
+124.53.179.146 - - [03/Sep/2020 11:44:17] "[37mGET /index.gif HTTP/1.1[0m" 200 -
+49.167.9.54 - - [03/Sep/2020 11:45:35] "[37mGET /index.gif HTTP/1.1[0m" 200 -
+216.244.66.202 - - [03/Sep/2020 11:45:59] "[37mGET /robots.txt HTTP/1.1[0m" 200 -
+216.244.66.202 - - [03/Sep/2020 11:57:22] "[37mGET /buy/youlexiangmuhezuo/pop HTTP/1.1[0m" 200 -
+110.45.92.2 - - [03/Sep/2020 12:02:45] "[37mGET /index.gif HTTP/1.1[0m" 200 -
+39.115.83.204 - - [03/Sep/2020 12:22:19] "[37mGET /index.gif HTTP/1.1[0m" 200 -
+93.158.161.14 - - [03/Sep/2020 12:39:57] "[37mGET /robots.txt HTTP/1.1[0m" 200 -
+77.88.5.150 - - [03/Sep/2020 12:39:57] "[37mGET /robots.txt HTTP/1.1[0m" 200 -
+93.158.161.14 - - [03/Sep/2020 12:40:01] "[37mGET / HTTP/1.1[0m" 200 -
+77.88.5.150 - - [03/Sep/2020 12:40:01] "[37mGET / HTTP/1.1[0m" 200 -
+218.156.198.49 - - [03/Sep/2020 13:13:55] "[37mGET /index.gif HTTP/1.1[0m" 200 -
+142.93.73.89 - - [03/Sep/2020 13:17:02] "[37mGET /wp-login.php HTTP/1.1[0m" 200 -
+49.167.9.54 - - [03/Sep/2020 13:22:35] "[37mGET /index.gif HTTP/1.1[0m" 200 -
+218.153.233.223 - - [03/Sep/2020 13:58:40] "[37mGET /index.gif HTTP/1.1[0m" 200 -
+218.153.233.223 - - [03/Sep/2020 13:58:40] "[37mGET /index.gif HTTP/1.1[0m" 200 -
