@@ -20,9 +20,10 @@ options.add_argument('--no-sandbox')
 options.add_argument('--disable-gpu')
 options.add_argument('--disable-dev-shm-usage')
 
-# chrome = webdriver.Chrome(executable_path=self.driver_path, options=options)
+PATH = 'static/lib/webDriver/chromedriver_linux'
+chrome = webdriver.Chrome(executable_path=PATH, options=options)
 
-chrome = webdriver.Chrome(executable_path="static/lib/webDriver/chromedriver_linux")
+#chrome = webdriver.Chrome(executable_path="static/lib/webDriver/chromedriver_linux")
 chrome.implicitly_wait(30)
 
 keyword='마이삭'
