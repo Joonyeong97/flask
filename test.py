@@ -42,23 +42,24 @@ for i in range(10):
         body.send_keys(Keys.PAGE_DOWN)
         time.sleep(1)
     text2 = chrome.find_elements_by_css_selector('#react-root > div > div > div.css-1dbjc4n.r-18u37iz.r-13qz1uu.r-417010 > main > div > div > div > div > div > div:nth-child(2) > div > div > section > div')
-    result.append(re.sub('\n', '', text2[0].text))
-
-time.sleep(1)
-# if self.platform == 'linux':
-#     chrome.close()
-
-t = Twitter()
-
-# t.add_dictionary(self.sajun(), 'Noun')
-print('단어사전 추출완료')
-tokens_ko = []
-
-for i in range(len(result)):
-    tokens_ko.append(t.nouns(result[i]))
-
-final = []
-for _, q in enumerate(tokens_ko):
-    for i in range(len(q)):
-        final.insert(-1, q[i])
-print(final[0])
+    print(text2.text)
+#     result.append(re.sub('\n', '', text2[0].text))
+#
+# time.sleep(1)
+# # if self.platform == 'linux':
+# #     chrome.close()
+#
+# t = Twitter()
+#
+# # t.add_dictionary(self.sajun(), 'Noun')
+# print('단어사전 추출완료')
+# tokens_ko = []
+#
+# for i in range(len(result)):
+#     tokens_ko.append(t.nouns(result[i]))
+#
+# final = []
+# for _, q in enumerate(tokens_ko):
+#     for i in range(len(q)):
+#         final.insert(-1, q[i])
+# print(final[0])
