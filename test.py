@@ -1,8 +1,9 @@
-import datetime
+
 import pymysql
+import datetime
 current = datetime.datetime.now()
 nine_hour_later = current + datetime.timedelta(hours=9)
-date = nine_hour_later.strftime("%Y-%m-%d %H:%M:%S")
+date = nine_hour_later.strftime("%Y%m%d")
 
 print(date)
 # from selenium import webdriver

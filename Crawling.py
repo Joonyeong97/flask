@@ -15,6 +15,7 @@ import sql
 from selenium.webdriver.chrome.options import Options
 from pyvirtualdisplay import Display
 import nltk
+import datetime
 
 class Crawling:
     def __init__(self):
@@ -25,6 +26,14 @@ class Crawling:
         # GUI 창 설정 (True = GUI 안함, False = GUI)
         self.headless = True
         self.platform = sys.platform
+
+        # 날짜 설정
+        if self.platform == 'linux':
+            current = datetime.datetime.now()
+            nine_hour_later = current + datetime.timedelta(hours=9)
+            self.date = nine_hour_later.strftime("%Y%m%d")
+        else:
+            self.date = time.strftime('%Y%m%d', time.localtime(time.time()))
 
         # Font 설정
         if self.platform == 'linux':
@@ -212,11 +221,9 @@ class Crawling:
         print('형태소분석 완료!')
         ko = nltk.Text(final, name="첫번째")
         data = ko.vocab().most_common(1000)
-        date = time.strftime('%Y%m%d', time.localtime(time.time()))
-        date2 = time.strftime('%Y%m%d_%H%M', time.localtime(time.time()))
 
         # 텍스트파일에 댓글 저장하기
-        file = open(text_save_path + '/twitter{}.txt'.format(date), 'w', encoding='utf-8')
+        file = open(text_save_path + '/twitter{}.txt'.format(self.date), 'w', encoding='utf-8')
 
         for review in result:
             file.write(review + '\n')
@@ -232,7 +239,7 @@ class Crawling:
         plt.axis('off'), plt.xticks([]), plt.yticks([])
         plt.tight_layout()
         plt.subplots_adjust(left=0, bottom=0, right=1, top=1, hspace=0, wspace=0)
-        plt.savefig(save_path + "/twitter_{}.png".format(date), bbox_inces='tight', dpi=400, pad_inches=0)
+        plt.savefig(save_path + "/twitter_{}.png".format(self.date), bbox_inces='tight', dpi=400, pad_inches=0)
 
     def Naver(self):
         cr_name = 'naver'
@@ -256,9 +263,6 @@ class Crawling:
             os.mkdir(text_save_path)
 
         # 네이버 헤드라인 가져오는소스
-        import time
-        date = time.strftime('%Y%m%d', time.localtime(time.time()))
-        date2 = time.strftime('%Y%m%d_%H%M', time.localtime(time.time()))
 
         result = []
         res = []
@@ -291,7 +295,7 @@ class Crawling:
         # driver = webdriver.Chrome(executable_path="./chromedriver.exe")
         # driver.implicitly_wait(30)
 
-        url = 'https://news.naver.com/main/ranking/popularDay.nhn?rankingType=popular_day&date={}'.format(date)
+        url = 'https://news.naver.com/main/ranking/popularDay.nhn?rankingType=popular_day&date={}'.format(self.date)
         chrome.get(url)
         time.sleep(2)
 
@@ -334,16 +338,14 @@ class Crawling:
 
         text2 = files.Contents
         # 텍스트파일에 저장 csv
-        files.to_csv(text_save_path + '/네이버종합뉴스_{}.csv'.format(date), index=False, encoding='utf-8')
+        files.to_csv(text_save_path + '/네이버종합뉴스_{}.csv'.format(self.date), index=False, encoding='utf-8')
 
         # -------------------------------------
 
         # 사전만들기
-        from ckonlpy.tag import Twitter
         t = Twitter()
         t.add_dictionary(self.sajun(), 'Noun')
 
-        import nltk
         tokens_ko = []
 
         for i in range(len(text2)):
@@ -363,12 +365,6 @@ class Crawling:
                 if len(data[i][0]) >= 2:
                     data_1.append(data[i])
 
-        from wordcloud import WordCloud
-        import matplotlib.pyplot as plt
-
-        import time
-        date = time.strftime('%Y%m%d', time.localtime(time.time()))
-        date2 = time.strftime('%Y%m%d_%H%M', time.localtime(time.time()))
 
         tmp_data = dict(data_1)
 
@@ -379,7 +375,7 @@ class Crawling:
         plt.axis('off'), plt.xticks([]), plt.yticks([])
         plt.tight_layout()
         plt.subplots_adjust(left=0, bottom=0, right=1, top=1, hspace=0, wspace=0)
-        plt.savefig(save_path + "/naver_{}.png".format(date), bbox_inces='tight', dpi=400, pad_inches=0)
+        plt.savefig(save_path + "/naver_{}.png".format(self.date), bbox_inces='tight', dpi=400, pad_inches=0)
 
     def Daum(self):
         cr_name = 'daum'
@@ -403,12 +399,10 @@ class Crawling:
             os.mkdir(text_save_path)
 
 
-        date = time.strftime('%Y%m%d', time.localtime(time.time()))
-        date2 = time.strftime('%Y%m%d_%H%M', time.localtime(time.time()))
         # 다음뉴스 헤드라인 긁어오기
         http=[]
         print('Daum 접속 중')
-        httz = 'https://media.daum.net/ranking/popular/?regDate={}'.format(date)
+        httz = 'https://media.daum.net/ranking/popular/?regDate={}'.format(self.date)
         res = requests.get(httz)
         soup = BeautifulSoup(res.content, 'html.parser')
         body = soup.select('#mArticle > div.rank_news > ul.list_news2')
@@ -436,7 +430,7 @@ class Crawling:
         text2 = files.Contents
 
         # 텍스트파일에 댓글 저장하기
-        files.to_csv(text_save_path+'/다음뉴스종합_{}.csv'.format(date),index=False,encoding='utf-8')
+        files.to_csv(text_save_path+'/다음뉴스종합_{}.csv'.format(self.date),index=False,encoding='utf-8')
         print('다음 텍스트 저장완료!')
 
 
@@ -476,7 +470,7 @@ class Crawling:
         plt.axis('off'), plt.xticks([]), plt.yticks([])
         plt.tight_layout()
         plt.subplots_adjust(left=0, bottom=0, right=1, top=1, hspace=0, wspace=0)
-        plt.savefig(save_path+"/daum_{}.png".format(date), bbox_inces='tight', dpi=400, pad_inches=0)
+        plt.savefig(save_path+"/daum_{}.png".format(self.date), bbox_inces='tight', dpi=400, pad_inches=0)
 
     def _enable_download_in_headless_chrome(self,driver: webdriver, download_dir: str):
         """
@@ -505,26 +499,6 @@ class Crawling:
             chrome.close()
 
         return close
-
-    def linux_chrome(self):
-        from pyvirtualdisplay import Display
-
-        display = Display(visible=0, size=(1024, 768))
-        display.start()
-
-        options = Options()
-        options.binary_location = "/usr/bin/google-chrome"
-
-        # chrome_options = webdriver.ChromeOptions()
-        options.headless = True
-        options.add_argument('--headless')
-        options.add_argument('--no-sandbox')
-        options.add_argument('--disable-gpu')
-        options.add_argument('--disable-dev-shm-usage')
-
-        chrome = webdriver.Chrome(executable_path=self.driver_path, options=options)
-
-        return chrome
 
     def generate_chrome(self,
             driver_path: str,

@@ -42,24 +42,24 @@ def newtest():
 @app.route('/Daum', methods=['GET'])
 def DAUM():
     if request.method == 'GET':
-        day = -1
+        day = 0
         date = (datetime.now() + timedelta(days=day)).strftime('%Y%m%d')
         return render_template('analysis/daum/DAUM.html',date=date)
 
 @app.route('/Naver', methods=['GET'])
 def NAVER():
     if request.method == 'GET':
-        day = -1
+        day = 0
         date = (datetime.now() + timedelta(days=day)).strftime('%Y%m%d')
         return render_template('analysis/naver/NAVER.html',date=date)
 
-@app.route('/Twitter', methods=['GET'])
-def TWITTER():
-    if request.method == 'GET':
-        day = -1
-        date = (datetime.now() + timedelta(days=day)).strftime('%Y%m%d')
-        search_n = sql.twi2(date)
-        return render_template('analysis/twitter/TWITTER.html',date=date, search_n=search_n)
+# @app.route('/Twitter', methods=['GET'])
+# def TWITTER():
+#     if request.method == 'GET':
+#         day = 0
+#         date = (datetime.now() + timedelta(days=day)).strftime('%Y%m%d')
+#         search_n = sql.twi2(date)
+#         return render_template('analysis/twitter/TWITTER.html',date=date, search_n=search_n)
 
 ###### TEST #######
 
@@ -87,11 +87,13 @@ def crawl():
                 # 구글트렌드 1위 검색어 가져오기
                 scan_name = crwals.google_trend_first()
                 time.sleep(2)
+
                 # test
                 # 트위터 크롤링
                 crwals.text(scan_name)
                 crwals.twitter()
                 crawls = '확인완료! 크롤링을 완료!!!'
+
                 # # 단어사전 추가
                 # sql.word_input(scan_name)
                 #
