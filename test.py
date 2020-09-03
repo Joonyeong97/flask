@@ -3,7 +3,24 @@ from selenium.webdriver.common.keys import Keys
 import time
 import re
 from ckonlpy.tag import Twitter
+from selenium.webdriver.chrome.options import Options
+from pyvirtualdisplay import Display
 
+
+display = Display(visible=0, size=(1024, 768))
+display.start()
+
+options = Options()
+options.binary_location = "/usr/bin/google-chrome"
+
+# chrome_options = webdriver.ChromeOptions()
+options.headless = True
+options.add_argument('--headless')
+options.add_argument('--no-sandbox')
+options.add_argument('--disable-gpu')
+options.add_argument('--disable-dev-shm-usage')
+
+# chrome = webdriver.Chrome(executable_path=self.driver_path, options=options)
 
 chrome = webdriver.Chrome(executable_path="static/lib/webDriver/chromedriver_linux")
 chrome.implicitly_wait(30)
