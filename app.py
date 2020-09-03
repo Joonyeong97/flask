@@ -291,13 +291,13 @@ def index2():
 
 
 
-if __name__ == '__main__':
-    # app.run(host='127.0.0.1', port=80, debug=True)
-    start = input('온라인은 y / 오프라인은 아무키나 : ')
-    if start == 'y':
-        app.run(host='0.0.0.0', port=80)
-    else:
-        app.run(host='127.0.0.1', port=80, debug = True)
+#if __name__ == '__main__':
+#    # app.run(host='127.0.0.1', port=80, debug=True)
+#    start = input('온라인은 y / 오프라인은 아무키나 : ')
+#    if start == 'y':
+#        app.run(host='0.0.0.0', port=80)
+#    else:
+#        app.run(host='127.0.0.1', port=80, debug = True)
 
-# if __name__ == '__main__':
-#     app.run(host='127.0.0.1', port=80, debug=True)
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=80, debug=False)
