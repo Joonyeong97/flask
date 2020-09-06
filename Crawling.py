@@ -323,6 +323,7 @@ class Crawling:
 
         if self.platform == 'linux':
             chrome.close()
+            display.stop()
 
         for i in range(len(https)):
             res = requests.get(https[i])
