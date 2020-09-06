@@ -297,7 +297,7 @@ class Crawling:
 
         url = 'https://news.naver.com/main/ranking/popularDay.nhn?rankingType=popular_day&date={}'.format(self.date)
         chrome.get(url)
-        time.sleep(2)
+        chrome.implicitly_wait(30)
 
         # scroll(3)
         for sun in range(4, 10):
