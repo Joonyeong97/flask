@@ -126,6 +126,7 @@ class Crawling:
         word = text[0].text
         word = word.split('\n')[1]
         chrome.close()
+        display.stop()
         return word
 
     def twitter(self):
@@ -204,6 +205,7 @@ class Crawling:
         time.sleep(1)
         if self.platform == 'linux':
             chrome.close()
+            display.stop()
 
         t = Twitter()
 
