@@ -270,7 +270,7 @@ class Crawling:
         # 웹 셋팅
         if self.platform == 'linux':
 
-            display = Display(visible=0, size=(1024, 768))
+            display = Display(visible=0, size=(800, 600))
             display.start()
 
             options = Options()
@@ -556,3 +556,7 @@ class Crawling:
         atexit.register(self._close_chrome(chrome))  # 스크립트 종료전 무조건 크롬 종료
 
         return chrome
+
+if __name__ == '__main__':
+    crwal = Crawling()
+    crwal.Naver()
