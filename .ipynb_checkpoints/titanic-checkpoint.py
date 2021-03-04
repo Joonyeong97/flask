@@ -10,34 +10,41 @@ def sysend():
 def fare_(Fare):
     if Fare <= 7.91:
         Fare = 0
+        return Fare
 
     elif Fare >= 7.92 and Fare <= 14.454:
         Fare = 1
+        return Fare
 
     elif Fare >= 14.455 and Fare <= 31:
         Fare = 2
+        return Fare
 
     elif Fare >= 32:
         Fare = 3
-    return Fare
+        return Fare
 
 
 def age_(age):
     if age <= 16:
         age = 0
+        return age
 
     elif age >= 17 and age <= 32:
         age = 1
+        return age
 
     elif age >= 33 and age <= 48:
         age = 2
+        return age
 
     elif age >= 49 and age <= 64:
         age = 3
+        return age
 
     elif age >= 65:
         age = 4
-    return age
+        return age
 
 
 def titanic_m(pclass, sex, age, Fare, embarked, name, isalone):
