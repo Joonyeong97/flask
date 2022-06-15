@@ -2,7 +2,7 @@
 def sql_():
     import pymysql
     conn = pymysql.connect(host='15.165.204.24',
-                           user='ljkk1542', port=8056, password='maroon3169!@', db='tell119',
+                           user='id', port=8056, password='password', db='tell119',
                            charset='utf8mb4', use_unicode=True,
                            cursorclass=pymysql.cursors.DictCursor)
     return conn
